@@ -861,6 +861,8 @@ img { max-width: 100%; display: block; }
   border: 1px solid rgba(255,255,255,0.15);
   transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
   overflow: hidden;
+  /* Uniform card height */
+  min-height: 340px;
 }
 .pp-pillar-card:hover {
   text-decoration: none;
@@ -883,6 +885,9 @@ img { max-width: 100%; display: block; }
   line-height: 1.2;
   color: #FFFFFF;
   letter-spacing: -0.01em;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
 }
 
 .pp-pillar-sub {
@@ -890,6 +895,7 @@ img { max-width: 100%; display: block; }
   font-size: 13.5px;
   line-height: 1.5;
   color: rgba(255,255,255,0.85);
+  flex: 1;
 }
 
 /* Logo row — centered, clean */
@@ -920,6 +926,40 @@ img { max-width: 100%; display: block; }
   white-space: nowrap;
   margin-top: 4px;
 }
+
+/* Exclusive partner logo on pillar cards */
+.pp-pillar-logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 14px;
+  object-fit: cover;
+  display: block;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+  margin: 4px 0 6px;
+}
+
+/* Value pill on pillar cards */
+.pp-pillar-value {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 5px 14px;
+  border-radius: var(--radius-pill);
+  background: rgba(255,255,255,0.18);
+  color: #FFFFFF;
+  border: 1px solid rgba(255,255,255,0.3);
+  margin-top: 4px;
+}
+
+/* "+ more" text on pillar cards */
+.pp-pillar-plus {
+  margin: 6px 0 0;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.6);
+}
+
+/* All exclusive pillar cards use consistent frosted-glass on blue banner */
 
 /* Responsive — stack pillar grid below pitch on narrow viewports */
 @media (max-width: 1024px) {
@@ -1511,6 +1551,130 @@ img { max-width: 100%; display: block; }
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+/* ── Premium Perk Cards (Exclusive Partnerships) ── */
+.premium-perks-sub {
+  font-size: 14px;
+  color: var(--halo-muted);
+  margin: -8px 0 20px;
+}
+.premium-perk-card {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 20px;
+  min-height: 240px;
+  box-shadow: var(--shadow-lg);
+}
+.premium-perk-card .ppc-content {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.premium-perk-card h2 {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0 0 4px;
+  line-height: 1.2;
+}
+.premium-perk-card .ppc-partner {
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.75;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.premium-perk-card .ppc-desc {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 16px;
+  opacity: 0.9;
+  max-width: 400px;
+}
+.ppc-exclusive-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 12px;
+  width: fit-content;
+  border: 1px solid rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.12);
+}
+.ppc-value-pill {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 16px;
+  width: fit-content;
+}
+.premium-perk-card .ppc-img {
+  overflow: hidden;
+}
+.premium-perk-card .ppc-img > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Dutch (Vet) */
+.ppc-dutch {
+  background: linear-gradient(160deg, #FF8200 0%, #D46800 100%);
+  color: #FFFFFF;
+}
+.ppc-dutch .ppc-value-pill { background: #FFFFFF; color: #B85700; }
+.ppc-dutch .pp-cta-btn { background: #FFFFFF; color: #B85700; }
+
+/* The Pets Table (Food) */
+.ppc-pets-table {
+  background: linear-gradient(160deg, #1E3A2A 0%, #15281D 100%);
+  color: #FFE9C7;
+}
+.ppc-pets-table h2 { color: #FFE9C7; }
+.ppc-pets-table .ppc-value-pill { background: var(--halo-yellow); color: #1E3A2A; }
+.ppc-pets-table .pp-cta-btn { background: var(--halo-yellow); color: #1E3A2A; }
+
+/* Travel + Leisure */
+.ppc-travel {
+  background: linear-gradient(160deg, #0E2C4F 0%, #07172B 100%);
+  color: #FFFFFF;
+}
+.ppc-travel h2 { color: #F5C97A; }
+.ppc-travel .ppc-value-pill { background: #F5C97A; color: #0E2C4F; }
+.ppc-travel .pp-cta-btn { background: #F5C97A; color: #0E2C4F; }
+
+/* Divider between premium and standard */
+.perks-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 36px 0 24px;
+}
+.perks-divider::before,
+.perks-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--halo-line);
+}
+.perks-divider span {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--halo-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
 }
 
 .perks-grid {
@@ -2372,6 +2536,9 @@ img { max-width: 100%; display: block; }
   .plan-grid { grid-template-columns: 1fr; }
   .core-grid { grid-template-columns: 1fr; }
   .featured-vet { grid-template-columns: 1fr; }
+  .premium-perk-card { grid-template-columns: 1fr; min-height: auto; }
+  .premium-perk-card .ppc-img { min-height: 200px; }
+  .premium-perk-card .ppc-content { padding: 24px; }
   .brand-grid { grid-template-columns: repeat(3, 1fr); }
   .mkt-strip { grid-template-columns: 1fr; gap: 12px; }
   .mkt-hero h1 { font-size: 32px; }
