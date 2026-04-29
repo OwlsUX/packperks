@@ -2036,22 +2036,6 @@ img { max-width: 100%; display: block; }
 .brand-logo-wrap--pets-table {
   background: #CFE8E5;
 }
-.perk-card .perk-img::after {
-  content: attr(data-cat);
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-  background: rgba(255,255,255,0.95);
-  color: var(--halo-ink);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  padding: 4px 9px;
-  border-radius: var(--radius-pill);
-  text-transform: uppercase;
-  font-weight: 700;
-  z-index: 2;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-}
 .perk-card .perk-body {
   padding: 16px 16px 18px;
   display: flex;
