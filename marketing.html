@@ -3,15 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Pack Perks · Halo Membership Benefits</title>
+  <title>Pack Perks · Over $1,500 in Annual Value</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/robinhood.css" />
 </head>
-<body>
+<body class="rh-theme">
 
+  <!-- Production Navigation (Restored to Light Mode automatically by removing dark mode overrides in CSS) -->
   <nav class="halo-navigation" role="navigation">
     <div class="nav-container">
       <a href="index.html" class="nav-logo">
-        <img src="https://d252xzqwj6utz.cloudfront.net/static/owls-home/Halo-Logo.svg" alt="Halo" width="120" height="auto">
+        <img class="nav-logo-img nav-logo-img--light" src="assets/halo-logo-white.svg" alt="Halo" width="120" height="auto">
+        <img class="nav-logo-img nav-logo-img--dark" src="assets/halo-logo.svg" alt="Halo" width="120" height="auto">
       </a>
       <div class="nav-menu-desktop">
         <div class="nav-dropdown exp-target">
@@ -25,58 +31,6 @@
             <a href="#" class="dropdown-link">Halo Collars</a>
             <a href="#" class="dropdown-link">Accessories</a>
             <a href="#" class="dropdown-link">Beacons</a>
-          </div>
-          <div class="mega-menu">
-            <div class="mega-menu__container">
-              <div class="mega-menu__products-area">
-                <div class="mega-menu__grid">
-                  <a href="#" class="product-card product-card__animated hc5-product">
-                    <div class="product-card__bg">
-                      <img src="https://d252xzqwj6utz.cloudfront.net/static/h5/white-2-s.webp" alt="Halo Collar 5" class="product-card__image">
-                    </div>
-                    <div class="product-card__content product-card__content--light">
-                      <div class="product-card__badge">NEW</div>
-                      <h3 class="product-card__title">Halo Collar 5</h3>
-                      <div class="product-card__price">
-                        <p class="price-label">Save $75</p>
-                        <p>$524 <span class="strikethrough">$599</span></p>
-                      </div>
-                    </div>
-                  </a>
-                  <a href="#" class="product-card product-card__animated hc4-product">
-                    <div class="product-card__bg">
-                      <img src="https://d252xzqwj6utz.cloudfront.net/static/h5/white-1-s.webp" alt="Halo Collar 4" class="product-card__image">
-                    </div>
-                    <div class="product-card__content product-card__content--light">
-                      <div class="product-card__badge">WHILE SUPPLIES LAST</div>
-                      <h3 class="product-card__title">Halo Collar 4</h3>
-                      <div class="product-card__price">
-                        <p class="price-label">Save $125</p>
-                        <p>$424 <span class="strikethrough">$549</span></p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="mega-menu__sidebar">
-                <nav>
-                  <a href="#" class="nav-item">
-                    <div class="nav-item__left">
-                      <img src="https://www.halocollar.com/wp-content/uploads/2024/01/product_remote_beacon_pdp.webp" alt="Shop Beacons" class="nav-item__image nav-item__image--scaled">
-                      <span>Shop Beacons</span>
-                    </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-item__arrow"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                  </a>
-                  <a href="#" class="nav-item">
-                    <div class="nav-item__left">
-                      <img src="https://www.halocollar.com/wp-content/uploads/2025/05/halo-shop-charging-stand-2505.webp" alt="Shop Accessories" class="nav-item__image">
-                      <span>Shop Accessories</span>
-                    </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-item__arrow"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                  </a>
-                </nav>
-              </div>
-            </div>
           </div>
         </div>
         <a href="#" class="nav-link">Testimonials</a>
@@ -95,8 +49,6 @@
           <div class="nav-dropdown-menu account-menu">
             <a href="account-perks.html" class="dropdown-link">My Account</a>
             <a href="#" class="dropdown-link">Login</a>
-            <a href="#" class="dropdown-link">Sign Up</a>
-            <a href="#" class="dropdown-link">My Orders</a>
           </div>
         </div>
         <a href="#" class="main-nav-cart nav-icon-btn" aria-label="Cart">
@@ -106,123 +58,643 @@
             <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
           </svg>
         </a>
-        <a href="marketing.html" class="nav-cta-btn">Explore Halo</a>
-      </div>
-      <div class="nav-right-mobile">
-        <a href="#" class="main-nav-cart nav-icon-btn" aria-label="Cart">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </a>
-        <button class="nav-mobile-toggle" aria-label="Menu" type="button">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
       </div>
     </div>
   </nav>
 
-  <!-- Hero -->
-  <section class="mkt-hero">
-    <span class="eyebrow">Pack Perks · Member Benefits</span>
-    <h1>Your Halo membership pays for itself.</h1>
-    <p>Exclusive partnerships across vet care, food, and travel — designed so the savings outweigh what you pay each month.</p>
-    <div class="actions">
-      <a href="membership-selection.html" class="btn btn-dark btn-lg">See plans</a>
-      <a href="account-perks.html" class="btn btn-light btn-lg">I'm already a member</a>
+  <!-- ================= HERO ================= -->
+  <section class="rh-section rh-hero" style="padding-top: 140px; padding-bottom: 80px; align-items: flex-start;">
+    <div class="rh-container">
+      <div class="rh-hero-content rh-reveal">
+        <h1 class="rh-h1" style="max-width: 800px; margin: 0 auto 24px;">Over <span class="rh-text-gradient" style="font-weight: 500;">$1,500</span> in Annual Value for Your Pack.</h1>
+        <p class="rh-p" style="margin: 0 auto 40px; max-width: 800px; text-wrap: balance;">Premium nutrition, on-demand vet care, travel credits, and more — included with every membership.</p>
+
+        <a href="https://halo.com/account/login" class="rh-btn" style="margin-bottom: 80px;">View Your Perks</a>
+        
+        <!-- 3 Browsable Lifestyle Cards -->
+        <style>
+          .hero-card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto 64px;
+            width: 100%;
+          }
+          .hero-card {
+            position: relative;
+            border-radius: var(--rh-radius-md);
+            overflow: hidden;
+            aspect-ratio: 3/4;
+            box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+            cursor: pointer;
+            background: var(--rh-bg-card);
+          }
+          .hero-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 60px rgba(0,0,0,0.12);
+          }
+          .hero-card-center {
+            transform: translateY(-24px);
+            box-shadow: 0 24px 60px rgba(0,0,0,0.1);
+          }
+          .hero-card-center:hover {
+            transform: translateY(-32px);
+          }
+          .hero-card img.bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+          }
+          .hero-card:hover img.bg {
+            transform: scale(1.05);
+          }
+          .hero-card-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 64px 24px 32px;
+            background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .hero-card-eyebrow {
+            color: rgba(255,255,255,0.9);
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 12px;
+          }
+          @media (max-width: 768px) {
+            .hero-card-grid {
+              grid-template-columns: 1fr;
+              gap: 32px;
+            }
+            .hero-card-center {
+              transform: none;
+            }
+            .hero-card-center:hover {
+              transform: translateY(-8px);
+            }
+          }
+        </style>
+
+        <div class="hero-card-grid">
+          <!-- Card 1: Nutrition -->
+          <div class="hero-card">
+            <img src="assets/brands/pets-table-hero.png" class="bg" alt="Nutrition">
+            <div class="hero-card-overlay">
+              <span class="hero-card-eyebrow">Premium Food</span>
+              <img src="assets/brands/pets-table-logo-real.png" style="height: 32px; filter: brightness(0) invert(1); object-fit: contain;">
+            </div>
+          </div>
+          
+          <!-- Card 2: Travel -->
+          <div class="hero-card hero-card-center">
+            <img src="assets/brands/tl-go-lifestyle.jpg" class="bg" alt="Travel">
+            <div class="hero-card-overlay">
+              <span class="hero-card-eyebrow">Exclusive Travel</span>
+              <img src="assets/brands/tl-go-logo.png" style="height: 24px; filter: brightness(0) invert(1); object-fit: contain;">
+            </div>
+          </div>
+
+          <!-- Card 3: Lifestyle -->
+          <div class="hero-card">
+            <img src="assets/brands/barkbox-lifestyle.png" class="bg" alt="Lifestyle">
+            <div class="hero-card-overlay">
+              <span class="hero-card-eyebrow">Daily Rewards</span>
+              <img src="assets/brands/bark-logo.png" style="height: 48px; object-fit: contain; border-radius: 4px;">
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Stats strip -->
-  <section class="mkt-strip">
-    <div><strong>$930+</strong> avg annual value at Gold</div>
-    <div><strong>3 flagship partners</strong> · Dutch · The Pets Table · Travel + Leisure</div>
-    <div><strong>20+ deals</strong> across walking, insurance, DNA, gear &amp; more</div>
-  </section>
+  <!-- ================= THE PERKS — 4 spotlights alternating overlay & split ================= -->
+  <section class="rh-section">
+    <div class="rh-container">
 
-  <!-- 3 Core Benefits explainer -->
-  <section class="mkt-section">
-    <h2>Three core benefits, picked deliberately.</h2>
-    <p class="lede">We focused our exclusive partnerships on the categories you actually spend the most on as a dog owner — vet care, food, and travel. Together they cover roughly 75% of total US pet spend.</p>
+      <div class="rh-section-head rh-reveal">
+        <span class="rh-eyebrow">The Perks</span>
+        <h2 class="rh-h2">Featured Benefits</h2>
+        <p class="rh-p">Five exclusive benefits included with every membership, in order of daily impact to your dog's well-being.</p>
+      </div>
 
-    <div class="core-grid">
+      <!-- 1. CELLULAR — Full-width overlay, card BOTTOM-LEFT -->
+      <div class="rh-spot-overlay rh-reveal">
+        <div class="rh-spot-overlay__media">
+          <img src="https://www.halocollar.com/go/pages/Lander-v2-2026/assets/images/sections/white-1.webp" alt="Halo Collar Cellular Coverage" style="object-position: 80% center;">
+        </div>
+        <div class="rh-spot-overlay__card">
+          <div class="rh-spot-overlay__carriers">
+            <img src="assets/brands/verizon.svg" alt="Verizon">
+            <img src="assets/brands/att.svg" alt="AT&amp;T">
+            <img src="assets/brands/tmobile.svg" alt="T-Mobile">
+          </div>
+          <span class="rh-spot__num">$120</span>
+          <span class="rh-spot__label">Annual Value · Unlimited Cellular</span>
+          <p class="rh-spot__copy">Always-on global cellular coverage for your dog's collar — included with every membership.</p>
+        </div>
+      </div>
 
-      <article class="core-card cat-vet">
-        <span class="cat-pill">Vet &amp; Rx</span>
-        <p class="brand">Powered by Dutch</p>
-        <h4>Talk to a vet, anytime.</h4>
-        <p class="blurb">Unlimited TeleVet visits and Rx fulfillment via PetMeds — one provider, two categories handled.</p>
-        <ul class="bullets">
-          <li>Bronze: 3 months 24/7 TeleVet</li>
-          <li>Silver: 6 months 24/7 TeleVet</li>
-          <li>Gold: Unlimited 24/7 TeleVet</li>
-        </ul>
-        <span class="included-tag">● Member exclusive</span>
-      </article>
+      <!-- 2. PAWP — Half-half split, content RIGHT (mirror) -->
+      <div class="rh-spot-split rh-spot-split--reverse rh-reveal">
+        <div class="rh-spot-split__content">
+          <img src="https://cdn.prod.website-files.com/6331f18a8af6845b0f127c61/633b067a96dff43ff302b0af_wordmark%20%E2%80%94%C2%A0color%20%E2%80%94%C2%A0text-color-black.svg" alt="Pawp" class="rh-spot__logo">
+          <span class="rh-spot__num">$99</span>
+          <span class="rh-spot__label">Annual Value · 24/7 Vet Care</span>
+          <p class="rh-spot__copy">Direct access to Pawp's network of licensed veterinary professionals — expert care, anytime, anywhere.</p>
+        </div>
+        <div class="rh-spot-split__media">
+          <img src="assets/hero-dog.png" alt="On-Demand Vet Care">
+        </div>
+      </div>
 
-      <article class="core-card cat-food">
-        <span class="cat-pill">Food</span>
-        <p class="brand">Powered by The Pets Table</p>
-        <h4>Pay your membership in food credits.</h4>
-        <p class="blurb">A first-of-its-kind evergreen offer that puts persistent savings on fresh, custom meals back in your pocket.</p>
-        <ul class="bullets">
-          <li>Bronze: $45 off + $150/yr in credits</li>
-          <li>Silver: $50 off + $200/yr in credits</li>
-          <li>Gold: $55 off + $250/yr in credits</li>
-        </ul>
-        <span class="included-tag">● Member exclusive</span>
-      </article>
+      <!-- 3. PETS TABLE — Full-width overlay, card BOTTOM-LEFT -->
+      <div class="rh-spot-overlay rh-reveal">
+        <div class="rh-spot-overlay__media">
+          <img src="https://media.hellofresh.com/f_auto,fl_lossy,q_auto/hellofresh_website/kn/cms/tpt-imagery/about/value-2.png" alt="The Pets Table">
+        </div>
+        <div class="rh-spot-overlay__card">
+          <img src="assets/brands/pets-table-logo-real.png" alt="The Pets Table" class="rh-spot__logo">
+          <span class="rh-spot__num">$250</span>
+          <span class="rh-spot__label">Annual Nutrition Credit</span>
+          <p class="rh-spot__copy">Fresh, vet-formulated meals tailored to your dog and delivered to your door.</p>
+        </div>
+      </div>
 
-      <article class="core-card cat-travel">
-        <span class="cat-pill">Travel</span>
-        <p class="brand">Powered by Travel + Leisure</p>
-        <h4>Take your dog further.</h4>
-        <p class="blurb">Up to 60% off dog-friendly stays plus annual travel credit you can stack on top.</p>
-        <ul class="bullets">
-          <li>Bronze: $50/yr in travel credits</li>
-          <li>Silver: $100/yr in travel credits</li>
-          <li>Gold: $200/yr in travel credits</li>
-        </ul>
-        <span class="included-tag">● Member exclusive</span>
-      </article>
+      <!-- 4. TRAVEL + LEISURE — Half-half split, content RIGHT (mirror of Pawp) -->
+      <div class="rh-spot-split rh-spot-split--reverse rh-reveal">
+        <div class="rh-spot-split__content">
+          <img src="assets/brands/tl-go-logo.png" alt="Travel + Leisure Go" class="rh-spot__logo">
+          <span class="rh-spot__num">$1,000</span>
+          <span class="rh-spot__label">Annual Travel Credit</span>
+          <p class="rh-spot__copy">Take the pack with you — pre-loaded credit redeemable at pet-friendly properties around the world.</p>
+        </div>
+        <div class="rh-spot-split__media">
+          <img src="assets/brands/tl-go-lifestyle.jpg" alt="Travel + Leisure">
+        </div>
+      </div>
 
     </div>
   </section>
 
-  <!-- Brands -->
-  <section class="mkt-section" style="padding-top:0;">
-    <h2>Plus 20+ more member deals.</h2>
-    <p class="lede">Curated affiliate partners spanning walking, insurance, DNA, RV rentals, toys, supplements, and outdoor gear.</p>
+  <!-- ================= 5. ROTATING BRAND OFFERS ================= -->
+  <section class="rh-section">
+    <div class="rh-container">
+      <div class="rh-brands-header rh-reveal">
+        <span class="rh-spot__label">$100 Annual Value · Rotating Offers</span>
+        <h2 class="rh-h2">Plus dozens of partner offers</h2>
+        <p class="rh-p" style="margin: 0 auto;">Limited-time credits and discounts on food, treats, vet care, supplements, walking, and more — always changing.</p>
+      </div>
 
-    <div class="brand-grid">
-      <div class="brand-tile bg-rover"><img src="https://placehold.co/280x200/1AB87A/FFFFFF/png?text=Rover&font=montserrat" alt="Rover" width="280" height="200"></div>
-      <div class="brand-tile bg-spot"><img src="https://placehold.co/280x200/FFB400/2D2D2D/png?text=Spot+Insurance&font=montserrat" alt="Spot Pet Insurance" width="280" height="200"></div>
-      <div class="brand-tile bg-embark"><img src="https://placehold.co/280x200/7B5BB6/FFFFFF/png?text=Embark&font=montserrat" alt="Embark" width="280" height="200"></div>
-      <div class="brand-tile bg-outdoorsy"><img src="https://placehold.co/280x200/2A6E58/FFFFFF/png?text=Outdoorsy&font=montserrat" alt="Outdoorsy" width="280" height="200"></div>
-      <div class="brand-tile bg-wag"><img src="https://placehold.co/280x200/6BBF59/2D3D2D/png?text=Wag%21&font=montserrat" alt="Wag!" width="280" height="200"></div>
-      <div class="brand-tile bg-bbox"><img src="https://placehold.co/280x200/4A2F8E/FFFFFF/png?text=BarkBox&font=montserrat" alt="BarkBox" width="280" height="200"></div>
-      <div class="brand-tile bg-joyfull"><img src="https://placehold.co/280x200/E36BA2/FFFFFF/png?text=Joyfull&font=montserrat" alt="Joyfull" width="280" height="200"></div>
-      <div class="brand-tile bg-kurgo"><img src="https://placehold.co/280x200/C84B2E/FFFFFF/png?text=Kurgo&font=montserrat" alt="Kurgo" width="280" height="200"></div>
-      <div class="brand-tile bg-westpaw"><img src="https://placehold.co/280x200/2BA46F/FFFFFF/png?text=West+Paw&font=montserrat" alt="West Paw" width="280" height="200"></div>
-      <div class="brand-tile" style="background:#1A1A1A;"><img src="https://placehold.co/280x200/1A1A1A/FFFFFF/png?text=%2B10+more&font=montserrat" alt="+10 more brands" width="280" height="200"></div>
+      <div class="rh-brands-marquee rh-reveal">
+        <div class="rh-brands-marquee__track">
+
+          <div class="rh-brands-tile">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/petmeds-lifestyle.jpg" alt="PetMeds">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/petmeds-logo.png" alt="PetMeds"></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">$50+ Credit</span>
+              <p class="rh-brands-tile__desc">Flea, tick &amp; heartworm</p>
+            </div>
+          </div>
+
+          <div class="rh-brands-tile">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/wholistic-lifestyle.png" alt="Wholistic">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/wholistic-logo.png" alt="Wholistic"></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">$25 Credit</span>
+              <p class="rh-brands-tile__desc">Joint &amp; digestive supplements</p>
+            </div>
+          </div>
+
+          <div class="rh-brands-tile">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/dutch-lifestyle.png" alt="Embark">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/embark-logo.png" alt="Embark"></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">$30 Credit</span>
+              <p class="rh-brands-tile__desc">Dog DNA &amp; breed identification</p>
+            </div>
+          </div>
+
+          <div class="rh-brands-tile">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/wondercide-lifestyle.png" alt="Wondercide">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/wondercide-logo.png" alt="Wondercide"></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">10% Credit</span>
+              <p class="rh-brands-tile__desc">Plant-powered flea &amp; tick</p>
+            </div>
+          </div>
+
+          <div class="rh-brands-tile">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/ollie-lifestyle.png" alt="Ollie">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/ollie-logo.png" alt="Ollie"></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">$60 Credit</span>
+              <p class="rh-brands-tile__desc">Fresh, custom dog meals</p>
+            </div>
+          </div>
+
+          <div class="rh-brands-tile">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/pets-table-lifestyle.png" alt="The Farmer's Dog">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/farmers-dog-logo.png" alt="The Farmer's Dog"></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">50% Credit</span>
+              <p class="rh-brands-tile__desc">Vet-formulated meal plans</p>
+            </div>
+          </div>
+
+          <div class="rh-brands-tile">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/redbarn-lifestyle.png" alt="Redbarn">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/redbarn-logo.png" alt="Redbarn"></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">$25 Credit</span>
+              <p class="rh-brands-tile__desc">Natural treats &amp; chews</p>
+            </div>
+          </div>
+
+          <div class="rh-brands-tile">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/wefeedraw-lifestyle.png" alt="We Feed Raw">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/wefeedraw-logo.png" alt="We Feed Raw"></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">$40 Credit</span>
+              <p class="rh-brands-tile__desc">Vet-formulated raw meals</p>
+            </div>
+          </div>
+
+          <div class="rh-brands-tile">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/joyfull-lifestyle.png" alt="Joyfull">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/joyfull-logo.png" alt="Joyfull"></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">50% Credit</span>
+              <p class="rh-brands-tile__desc">Functional treats</p>
+            </div>
+          </div>
+
+          <div class="rh-brands-tile">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/pawstruck-lifestyle.png" alt="Pawstruck">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/pawstruck-logo.png" alt="Pawstruck"></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">$20 Credit</span>
+              <p class="rh-brands-tile__desc">All-natural bully sticks</p>
+            </div>
+          </div>
+
+          <div class="rh-brands-tile">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/barkbox-lifestyle.png" alt="BarkBox">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/bark-logo.png" alt="BarkBox"></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">25% Credit</span>
+              <p class="rh-brands-tile__desc">Monthly box of toys &amp; treats</p>
+            </div>
+          </div>
+
+          <div class="rh-brands-tile">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/rover-lifestyle.png" alt="Rover">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/rover-logo.png" alt="Rover"></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">$20 Credit</span>
+              <p class="rh-brands-tile__desc">Walking, sitting &amp; boarding</p>
+            </div>
+          </div>
+
+          <div class="rh-brands-tile">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/gfpet-lifestyle.png" alt="Outdoorsy">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/gfpet-logo.png" alt="Outdoorsy"></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">$25 Credit</span>
+              <p class="rh-brands-tile__desc">Dog-friendly RV trips</p>
+            </div>
+          </div>
+
+          <!-- Duplicate set for seamless infinite loop -->
+
+          <div class="rh-brands-tile" aria-hidden="true">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/petmeds-lifestyle.jpg" alt="">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/petmeds-logo.png" alt=""></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">$50+ Credit</span>
+              <p class="rh-brands-tile__desc">Flea, tick &amp; heartworm</p>
+            </div>
+          </div>
+
+          <div class="rh-brands-tile" aria-hidden="true">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/wholistic-lifestyle.png" alt="">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/wholistic-logo.png" alt=""></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">$25 Credit</span>
+              <p class="rh-brands-tile__desc">Joint &amp; digestive supplements</p>
+            </div>
+          </div>
+
+          <div class="rh-brands-tile" aria-hidden="true">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/dutch-lifestyle.png" alt="">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/embark-logo.png" alt=""></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">$30 Credit</span>
+              <p class="rh-brands-tile__desc">Dog DNA &amp; breed identification</p>
+            </div>
+          </div>
+
+          <div class="rh-brands-tile" aria-hidden="true">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/wondercide-lifestyle.png" alt="">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/wondercide-logo.png" alt=""></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">10% Credit</span>
+              <p class="rh-brands-tile__desc">Plant-powered flea &amp; tick</p>
+            </div>
+          </div>
+
+          <div class="rh-brands-tile" aria-hidden="true">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/ollie-lifestyle.png" alt="">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/ollie-logo.png" alt=""></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">$60 Credit</span>
+              <p class="rh-brands-tile__desc">Fresh, custom dog meals</p>
+            </div>
+          </div>
+
+          <div class="rh-brands-tile" aria-hidden="true">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/pets-table-lifestyle.png" alt="">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/farmers-dog-logo.png" alt=""></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">50% Credit</span>
+              <p class="rh-brands-tile__desc">Vet-formulated meal plans</p>
+            </div>
+          </div>
+
+          <div class="rh-brands-tile" aria-hidden="true">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/redbarn-lifestyle.png" alt="">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/redbarn-logo.png" alt=""></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">$25 Credit</span>
+              <p class="rh-brands-tile__desc">Natural treats &amp; chews</p>
+            </div>
+          </div>
+
+          <div class="rh-brands-tile" aria-hidden="true">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/wefeedraw-lifestyle.png" alt="">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/wefeedraw-logo.png" alt=""></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">$40 Credit</span>
+              <p class="rh-brands-tile__desc">Vet-formulated raw meals</p>
+            </div>
+          </div>
+
+          <div class="rh-brands-tile" aria-hidden="true">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/joyfull-lifestyle.png" alt="">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/joyfull-logo.png" alt=""></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">50% Credit</span>
+              <p class="rh-brands-tile__desc">Functional treats</p>
+            </div>
+          </div>
+
+          <div class="rh-brands-tile" aria-hidden="true">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/pawstruck-lifestyle.png" alt="">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/pawstruck-logo.png" alt=""></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">$20 Credit</span>
+              <p class="rh-brands-tile__desc">All-natural bully sticks</p>
+            </div>
+          </div>
+
+          <div class="rh-brands-tile" aria-hidden="true">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/barkbox-lifestyle.png" alt="">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/bark-logo.png" alt=""></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">25% Credit</span>
+              <p class="rh-brands-tile__desc">Monthly box of toys &amp; treats</p>
+            </div>
+          </div>
+
+          <div class="rh-brands-tile" aria-hidden="true">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/rover-lifestyle.png" alt="">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/rover-logo.png" alt=""></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">$20 Credit</span>
+              <p class="rh-brands-tile__desc">Walking, sitting &amp; boarding</p>
+            </div>
+          </div>
+
+          <div class="rh-brands-tile" aria-hidden="true">
+            <div class="rh-brands-tile__media">
+              <img src="assets/brands/gfpet-lifestyle.png" alt="">
+              <span class="rh-brands-tile__chip"><img src="assets/brands/gfpet-logo.png" alt=""></span>
+            </div>
+            <div class="rh-brands-tile__body">
+              <span class="rh-brands-tile__value">$25 Credit</span>
+              <p class="rh-brands-tile__desc">Dog-friendly RV trips</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- CTA Band -->
-  <section class="mkt-section">
-    <div class="cta-band">
-      <h2>Get every Pack Perk the day you sign up.</h2>
-      <p>Pick a plan in under a minute — your perks are active immediately.</p>
-      <a href="membership-selection.html" class="btn btn-primary btn-lg">See plans</a>
+  <!-- ================= ROI SUMMARY ================= -->
+  <section class="rh-section" style="background: var(--rh-bg-elevated); border-top: 1px solid var(--rh-border);">
+    <div class="rh-container">
+      <div class="rh-reveal" style="text-align: center; margin-bottom: 64px;">
+        <h2 class="rh-h2">Your Annual Pack Perks Value</h2>
+        <p class="rh-p" style="margin: 0 auto;">Let your Halo membership pay for itself in everyday value.</p>
+      </div>
+
+      <div class="rh-summary-wrapper rh-reveal">
+        <div class="rh-summary-row">
+          <span class="label">IoT Cellular Data</span>
+          <span class="value">$120<span>Value</span></span>
+        </div>
+        <div class="rh-summary-row">
+          <span class="label">On-Demand Vet Care</span>
+          <span class="value">$99<span>Value</span></span>
+        </div>
+        <div class="rh-summary-row">
+          <span class="label">Premium Nutrition</span>
+          <span class="value">$250<span>Credit</span></span>
+        </div>
+        <div class="rh-summary-row">
+          <span class="label">Travel Partnerships</span>
+          <span class="value">$1,000<span>Credit</span></span>
+        </div>
+        <div class="rh-summary-row">
+          <span class="label">Lifestyle Offers</span>
+          <span class="value">$100<span>Value</span></span>
+        </div>
+        
+        <div class="rh-summary-total">
+          <span class="label">Total Available Value</span>
+          <span class="value rh-text-gradient" style="font-weight: 500;">$1,569<span style="font-size: 1.25rem; font-weight: 400; color: var(--rh-text-mute); margin-left: 8px;">/ Year</span></span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <footer class="foot">
-    © 2026 Halo Collar · <a href="#">Terms</a> · <a href="#">Privacy</a> · Pack Perks change from time to time.
-  </footer>
+  <!-- ================= ALLOCATION MATRIX ================= -->
+  <section class="rh-section rh-section--dark">
+    <div class="rh-container">
+      <div class="rh-section-head rh-reveal">
+        <span class="rh-eyebrow">Membership Tiers</span>
+        <h2 class="rh-h2">Benefits by Tier</h2>
+        <p class="rh-p">See what's included at each level — credits and access scale with your membership.</p>
+      </div>
+
+      <div class="rh-matrix-wrap rh-reveal">
+        <table class="rh-matrix">
+          <tr>
+            <th>Pack Perk</th>
+            <th class="col-bronze"><span class="tier-pill tier-pill--bronze">Bronze</span></th>
+            <th class="col-silver"><span class="tier-pill tier-pill--silver">Silver</span></th>
+            <th class="col-gold"><span class="tier-pill tier-pill--gold">Gold</span></th>
+          </tr>
+          <tr>
+            <td>IoT Cellular Data</td>
+            <td>Fully Covered</td>
+            <td>Fully Covered</td>
+            <td>Fully Covered</td>
+          </tr>
+          <tr>
+            <td>Pawp Vet Care</td>
+            <td>3 Months Free</td>
+            <td>6 Months Free</td>
+            <td>Unlimited Access</td>
+          </tr>
+          <tr>
+            <td>The Pets Table</td>
+            <td>$150 Credit</td>
+            <td>$200 Credit</td>
+            <td>$250 Credit</td>
+          </tr>
+          <tr>
+            <td>Travel + Leisure Go</td>
+            <td>$50 Credit</td>
+            <td>$250 Credit</td>
+            <td>$1,000 Credit</td>
+          </tr>
+          <tr>
+            <td>Exclusive Offers</td>
+            <td>$100 Value</td>
+            <td>$100 Value</td>
+            <td>$100 Value</td>
+          </tr>
+          <tr class="total-row">
+            <td>Total Annual Value</td>
+            <td class="col-bronze">Over $400</td>
+            <td class="col-silver">Over $800</td>
+            <td class="col-gold rh-text-gradient" style="font-weight: 500;">Over $1,500</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FINAL CTA — Cinematic Finale ================= -->
+  <section class="rh-cta-finale rh-reveal">
+    <img src="https://d252xzqwj6utz.cloudfront.net/static/h5/home-header-realtree-d.webp" alt="" class="rh-cta-finale__bg">
+    <div class="rh-cta-finale__overlay"></div>
+    <div class="rh-cta-finale__content">
+      <span class="rh-eyebrow rh-cta-finale__eyebrow">Halo Membership</span>
+      <h2 class="rh-h2 rh-cta-finale__title">Powering a world where all dogs can thrive.</h2>
+      <p class="rh-p rh-cta-finale__copy">Access your account and get the most out of your membership today.</p>
+      <a href="https://halo.com/account/login" class="rh-btn">View Your Perks</a>
+    </div>
+  </section>
+
+  <!-- Scroll-reveal script -->
+  <script>
+    (function () {
+      if (!('IntersectionObserver' in window)) {
+        document.querySelectorAll('.rh-reveal').forEach(function (el) { el.classList.add('is-in'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-in');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+      document.querySelectorAll('.rh-reveal').forEach(function (el) { io.observe(el); });
+    })();
+  </script>
+
+  <!-- Nav scroll-state: transparent over hero, solid white once past it -->
+  <script>
+    (function () {
+      var nav = document.querySelector('.halo-navigation');
+      var hero = document.querySelector('.rh-hero');
+      if (!nav || !hero) return;
+      if (!('IntersectionObserver' in window)) {
+        nav.classList.add('is-scrolled');
+        return;
+      }
+      var navObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          nav.classList.toggle('is-scrolled', !entry.isIntersecting);
+        });
+      }, { rootMargin: '-80px 0px 0px 0px', threshold: 0 });
+      navObserver.observe(hero);
+    })();
+  </script>
 
 </body>
 </html>
