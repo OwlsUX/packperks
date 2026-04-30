@@ -1551,7 +1551,7 @@ img { max-width: 100%; display: block; }
   line-height: 1.15;
 }
 .ppl-hero-sub {
-  font-size: 16px;
+  font-size: 14px;
   color: rgba(255,255,255,0.78);
   margin: 0 0 22px;
   max-width: 440px;
@@ -1652,7 +1652,7 @@ img { max-width: 100%; display: block; }
   line-height: 1.25;
 }
 .ppl-feat-card p {
-  font-size: 16px;
+  font-size: 14px;
   color: var(--halo-muted);
   line-height: 1.5;
   margin: 0;
@@ -2052,7 +2052,7 @@ img { max-width: 100%; display: block; }
 }
 .perk-card p {
   margin: 0 0 16px;
-  font-size: 16px;
+  font-size: 14px;
   color: var(--halo-muted);
   line-height: 1.5;
   flex: 1;
@@ -2817,7 +2817,7 @@ img { max-width: 100%; display: block; }
 }
 .cat-block-text p {
   margin: 0;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5;
   color: var(--halo-muted);
 }
