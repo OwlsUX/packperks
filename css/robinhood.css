@@ -230,7 +230,7 @@ body.rh-theme {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 900px;
+  max-width: 1140px;
   margin: 0 auto;
 }
 
@@ -439,7 +439,7 @@ body.rh-theme {
   display: flex;
   gap: 16px;
   width: max-content;
-  animation: rh-marquee 70s linear infinite;
+  animation: rh-marquee 95s linear infinite;
 }
 .rh-brands-marquee:hover .rh-brands-marquee__track,
 .rh-brands-marquee:focus-within .rh-brands-marquee__track {
@@ -525,6 +525,47 @@ body.rh-theme {
   color: var(--rh-text-mute);
   line-height: 1.5;
   margin: 0;
+}
+
+/* Variant B — app-icon tile: rounded square icon, centered text below, no card frame */
+.rh-brands-tile--solid {
+  width: 220px;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  overflow: visible;
+}
+.rh-brands-tile--solid:hover {
+  transform: none;
+  background: transparent;
+  border-color: transparent;
+  box-shadow: none;
+}
+.rh-brands-tile--solid .rh-brands-tile__media {
+  background: var(--rh-bg-card);
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--rh-radius-md);
+}
+.rh-brands-tile--solid .rh-brands-tile__media img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  object-fit: cover;
+  display: block;
+}
+.rh-brands-tile--solid .rh-brands-tile__body {
+  padding: 14px 4px 0;
+  text-align: center;
+}
+.rh-brands-tile--solid .rh-brands-tile__value {
+  font-size: 0.9375rem;
+  margin-bottom: 2px;
+}
+.rh-brands-tile--solid .rh-brands-tile__desc {
+  font-size: 0.8125rem;
+  line-height: 1.4;
 }
 
 /* Summary Statement */
