@@ -928,9 +928,31 @@ body.nav-locked { overflow: hidden; }
   margin: 0 auto;
 }
 @media (max-width: 760px) {
-  .pp-banner.pp-banner-v6 { padding: 28px 22px; }
+  .pp-banner.pp-banner-v6 { padding: 28px 22px 32px; }
   .pp-banner.pp-banner-v6 .pp-pitch { margin-bottom: 24px; }
-  .pp-banner.pp-banner-v6 .pp-pillar-grid { grid-template-columns: 1fr; gap: 12px; }
+  .pp-banner.pp-banner-v6 .pp-pillar-grid {
+    display: flex;
+    grid-template-columns: none;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    scroll-padding-left: 22px;
+    gap: 12px;
+    padding: 4px 22px 12px;
+    margin: 0 -22px;
+    scrollbar-width: none;
+  }
+  .pp-banner.pp-banner-v6 .pp-pillar-grid::-webkit-scrollbar { display: none; }
+  .pp-banner.pp-banner-v6 .pp-pillar-grid-title {
+    flex: 0 0 100%;
+    text-align: left;
+    margin: 0 0 4px;
+    padding-left: 0;
+  }
+  .pp-banner.pp-banner-v6 .pp-pillar-card {
+    flex: 0 0 86%;
+    scroll-snap-align: start;
+  }
 }
 
 /* 3-up pillar grid */
