@@ -472,7 +472,7 @@ body.rh-theme {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  width: 300px;
+  width: 240px;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   text-decoration: none;
   color: var(--rh-text);
