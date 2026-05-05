@@ -2286,21 +2286,26 @@ body.nav-locked { overflow: hidden; }
   flex: 1;
 }
 .perk-card .redeem {
-  background: var(--halo-yellow);
+  background: #FFFFFF;
   color: var(--halo-ink);
-  border: none;
+  border: 1px solid var(--halo-line);
   border-radius: var(--radius-pill);
-  padding: 12px 18px;
-  font-size: 16px;
-  font-weight: 700;
+  padding: 11px 18px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
   text-decoration: none;
   text-align: center;
   display: block;
   font-family: inherit;
-  transition: background 0.15s ease;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
-.perk-card .redeem:hover { background: var(--halo-yellow-hover); text-decoration: none; }
+.perk-card .redeem:hover {
+  background: var(--halo-ink);
+  border-color: var(--halo-ink);
+  color: #FFFFFF;
+  text-decoration: none;
+}
 .perk-card .code-line { font-size: 14px; color: var(--halo-muted); margin: 12px 0 0; letter-spacing: 0.01em; line-height: 1.5; }
 
 /* Brand placeholder colors for offer card images */
