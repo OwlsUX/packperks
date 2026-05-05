@@ -1884,6 +1884,11 @@ body.nav-locked { overflow: hidden; }
   color: var(--halo-muted);
   line-height: 1.5;
   margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .ppl-feat-value {
   position: absolute;
@@ -2284,6 +2289,11 @@ body.nav-locked { overflow: hidden; }
   color: var(--halo-muted);
   line-height: 1.5;
   flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 .perk-card .redeem {
   background: #FFFFFF;
