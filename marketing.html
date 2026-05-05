@@ -134,14 +134,36 @@
           }
           @media (max-width: 768px) {
             .hero-card-grid {
-              grid-template-columns: 1fr;
-              gap: 32px;
+              display: flex;
+              grid-template-columns: none;
+              overflow-x: auto;
+              overflow-y: visible;
+              -webkit-overflow-scrolling: touch;
+              scroll-snap-type: x mandatory;
+              scroll-padding: 0 16px;
+              gap: 12px;
+              padding: 4px 16px 8px;
+              margin: 0 -16px 48px;
+              scrollbar-width: none;
+            }
+            .hero-card-grid::-webkit-scrollbar { display: none; }
+            .hero-card {
+              flex: 0 0 78%;
+              aspect-ratio: 4/5;
+              scroll-snap-align: center;
             }
             .hero-card-center {
               transform: none;
             }
             .hero-card-center:hover {
               transform: translateY(-8px);
+            }
+            .hero-card-overlay {
+              padding: 48px 16px 20px;
+            }
+            .hero-card-eyebrow {
+              font-size: 11px;
+              margin-bottom: 8px;
             }
           }
         </style>
