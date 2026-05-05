@@ -288,6 +288,11 @@ body.rh-theme {
   display: block;
   font-variant-numeric: tabular-nums;
 }
+.rh-spot__num--text {
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  letter-spacing: -0.02em;
+  font-variant-numeric: normal;
+}
 .rh-spot__label {
   font-size: 0.8125rem;
   font-weight: 600;
