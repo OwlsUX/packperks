@@ -1,5 +1,11 @@
 (function () {
   function init() {
+    initFilter();
+    initCodeCopy();
+    initOfferModal();
+  }
+
+  function initFilter() {
     var filterBar = document.querySelector('.ppl-filter');
     if (!filterBar) return;
 
@@ -83,7 +89,13 @@
       });
     }
 
-    // Click-to-copy on .code-line elements
+    apply();
+  }
+
+  function initCodeCopy() {
+    if (initCodeCopy._done) return;
+    initCodeCopy._done = true;
+
     document.addEventListener('click', function (e) {
       var line = e.target.closest('.code-line');
       if (!line) return;
@@ -115,7 +127,6 @@
       }, 1400);
     });
 
-    // Mark .code-line as interactive (a11y)
     document.querySelectorAll('.code-line').forEach(function (line) {
       line.setAttribute('role', 'button');
       line.setAttribute('tabindex', '0');
@@ -127,9 +138,6 @@
         }
       });
     });
-
-    initOfferModal();
-    apply();
   }
 
   function initOfferModal() {
