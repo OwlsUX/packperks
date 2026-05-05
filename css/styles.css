@@ -1799,22 +1799,8 @@ body.nav-locked { overflow: hidden; }
   .ppl-filter-pill { white-space: nowrap; }
 }
 
-/* Code line copy affordance */
-.perk-card .code-line {
-  cursor: pointer;
-  user-select: none;
-  display: inline-block;
-  border-radius: 6px;
-  padding: 2px 6px;
-  margin-left: -6px !important;
-  transition: background 0.12s ease, color 0.12s ease;
-}
-.perk-card .code-line:hover { background: var(--halo-line-soft); color: var(--halo-text); }
-.perk-card .code-line:focus-visible {
-  outline: 2px solid var(--halo-blue);
-  outline-offset: 2px;
-}
-.perk-card .code-line.is-copied { color: var(--travel-bg); font-weight: 600; }
+/* Promo code lives only in the offer modal — hide it on cards. */
+.perk-card .code-line { display: none; }
 
 /* ── Featured Benefits — 3-card grid with images ── */
 .ppl-featured-grid {
@@ -2316,7 +2302,6 @@ body.nav-locked { overflow: hidden; }
   color: #FFFFFF;
   text-decoration: none;
 }
-.perk-card .code-line { font-size: 14px; color: var(--halo-muted); margin: 12px 0 0; letter-spacing: 0.01em; line-height: 1.5; }
 
 /* Brand placeholder colors for offer card images */
 .bg-ollie { background: #FFC629; color: #6B2D2D; }
