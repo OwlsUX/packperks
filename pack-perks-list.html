@@ -4,6 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pack Perks · Halo</title>
+  <meta name="description" content="Browse your Pack Perks — exclusive partner credits for vet care, food, travel, and more, included with your Halo membership." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Pack Perks · Halo" />
+  <meta property="og:description" content="Exclusive partner credits for vet care, food, travel, and more — included with your Halo membership." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
@@ -149,30 +153,49 @@
       </div>
     </section>
 
+    <!-- ============== FILTER BAR ============== -->
+    <div class="ppl-filter" role="region" aria-label="Filter Pack Perks">
+      <div class="ppl-filter-search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2"/>
+          <path d="M21 21L17 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+        <input type="search" id="ppl-search" placeholder="Search perks, brands, or codes…" autocomplete="off" />
+      </div>
+      <div class="ppl-filter-pills" role="tablist">
+        <button type="button" class="ppl-filter-pill is-active" data-filter="all">All</button>
+        <button type="button" class="ppl-filter-pill" data-filter="featured">Featured</button>
+        <button type="button" class="ppl-filter-pill" data-filter="vet">Vet + Rx</button>
+        <button type="button" class="ppl-filter-pill" data-filter="food">Food</button>
+        <button type="button" class="ppl-filter-pill" data-filter="travel">Travel</button>
+      </div>
+      <p class="ppl-filter-empty" hidden>No perks match your search.</p>
+    </div>
+
     <!-- ============== FEATURED BENEFITS ============== -->
-    <div class="cat-block-head" style="margin-bottom:18px;">
+    <div class="cat-block-head" data-section="featured" style="margin-bottom:18px;">
       <div class="cat-block-text">
         <h2>Featured Benefits</h2>
         <p>Exclusive partnerships included with your membership — you won't find these anywhere else.</p>
       </div>
     </div>
 
-    <div class="ppl-featured-grid">
+    <div class="ppl-featured-grid" data-section="featured">
 
-      <!-- Vet + Rx — Dutch -->
+      <!-- Vet + Rx — Pawp -->
       <article class="ppl-feat-card">
-        <div class="ppl-feat-img"><img src="https://www.dutch.com/cdn/shop/files/Homepage_hero.webp?v=1776269613&width=1296" alt="Dutch"><span class="brand-logo-wrap"><img src="https://media.licdn.com/dms/image/v2/C560BAQF9mK9yeFO4VA/company-logo_200_200/company-logo_200_200/0/1630650188587/dutchpet_logo?e=2147483647&v=beta&t=7dpi8h40edTi75T7efP2LQNdD4RIboESsaRluflByWM" class="brand-logo" alt=""></span></div>
+        <div class="ppl-feat-img"><img src="assets/hero-dog.png" alt="Pawp"><span class="brand-logo-wrap"><img src="assets/brands/pawp-logo.svg" class="brand-logo" alt=""></span></div>
         <div class="ppl-feat-text">
-          <span class="ppl-feat-eyebrow">Vet + Rx · Dutch</span>
+          <span class="ppl-feat-eyebrow">Vet + Rx · Pawp</span>
           <h3>Unlimited 24/7 TeleVet + Rx</h3>
-          <p>Unlimited TeleVet and prescriptions through Dutch for proactive, affordable care for your pup.</p>
+          <p>Unlimited TeleVet and prescriptions through Pawp for proactive, affordable care for your pup.</p>
           <a href="#" class="ppl-feat-cta">Activate Now</a>
         </div>
       </article>
 
       <!-- Food — The Pets Table -->
       <article class="ppl-feat-card">
-        <div class="ppl-feat-img"><img src="https://media.hellofresh.com/f_auto,fl_lossy,q_auto/hellofresh_website/kn/cms/tpt-imagery/about/value-2.png" alt="The Pets Table"><span class="brand-logo-wrap brand-logo-wrap--pets-table"><img src="https://www.thepetstable.com/assets/petstable/images/Logo.png" class="brand-logo" alt=""></span></div>
+        <div class="ppl-feat-img"><img src="assets/brands/pets-table-lifestyle.png" alt="The Pets Table"><span class="brand-logo-wrap brand-logo-wrap--pets-table"><img src="assets/brands/pets-table-logo-real.png" class="brand-logo" alt=""></span></div>
         <div class="ppl-feat-text">
           <span class="ppl-feat-eyebrow">Food · The Pets Table</span>
           <h3>$250 in Annual Food Credits</h3>
@@ -195,12 +218,12 @@
     </div>
 
     <!-- Divider between premium and standard -->
-    <div class="perks-divider">
+    <div class="perks-divider" data-section="divider">
       <span>Plus many more exclusive discounts</span>
     </div>
 
     <!-- ============== VET + RX ============== -->
-    <div class="cat-block" id="vet">
+    <div class="cat-block" id="vet" data-section="vet">
       <div class="cat-block-head">
         <div class="cat-block-text">
           <h2>Vet + Rx</h2>
@@ -252,7 +275,7 @@
     </div>
 
     <!-- ============== FOOD & NUTRITION ============== -->
-    <div class="cat-block" id="food">
+    <div class="cat-block" id="food" data-section="food">
       <div class="cat-block-head">
         <div class="cat-block-text">
           <h2>Food</h2>
@@ -334,7 +357,7 @@
     </div>
 
     <!-- ============== TRAVEL & SERVICES ============== -->
-    <div class="cat-block" id="travel">
+    <div class="cat-block" id="travel" data-section="travel">
       <div class="cat-block-head">
         <div class="cat-block-text">
           <h2>Travel</h2>
@@ -371,5 +394,28 @@
     Pack Perks change from time to time. Offers from Pack Perks partners.
   </footer>
 
+  <!-- Offer detail modal (populated by js/perks-filter.js) -->
+  <div class="offer-modal" id="offer-modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="offer-modal-title">
+    <div class="offer-modal__backdrop" data-modal-close></div>
+    <div class="offer-modal__shell modal-shell" role="document">
+      <button type="button" class="modal-close" aria-label="Close" data-modal-close>✕</button>
+      <div class="modal-brand"><img alt="" /></div>
+      <h1 id="offer-modal-title"></h1>
+      <div class="modal-img"><img alt="" /></div>
+      <p class="blurb"></p>
+      <div class="code-block">
+        <p class="code-instr">At checkout, enter this code:</p>
+        <button class="code-pill" type="button" data-modal-copy>
+          <span class="code-pill__text"></span>
+          <span class="copy-icon"></span>
+        </button>
+      </div>
+      <p class="disclaim">Your discount will appear after applying the code.</p>
+      <a href="#" class="btn btn-primary ext-link" data-modal-cta>Continue to Partner</a>
+    </div>
+  </div>
+
+  <script src="js/nav.js" defer></script>
+  <script src="js/perks-filter.js" defer></script>
 </body>
 </html>
