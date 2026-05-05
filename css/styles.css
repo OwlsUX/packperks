@@ -891,6 +891,48 @@ body.nav-locked { overflow: hidden; }
   min-height: 320px;
 }
 
+/* v6 — pitch on top, 3 pillar cards stacked below */
+.pp-banner.pp-banner-v6 {
+  display: block !important;
+  grid-template-columns: none !important;
+  padding: 44px 40px 40px;
+  min-height: auto;
+}
+.pp-banner.pp-banner-v6 .pp-pitch {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 36px;
+  padding: 0;
+}
+.pp-banner.pp-banner-v6 .pp-pitch .pp-headline {
+  max-width: none;
+  margin: 0 auto 12px;
+}
+.pp-banner.pp-banner-v6 .pp-pitch .pp-pitch-sub {
+  max-width: 600px;
+  margin: 0 auto 20px;
+}
+.pp-banner.pp-banner-v6 .pp-pitch .pp-cta-btn {
+  display: inline-flex;
+  margin: 0 auto;
+}
+.pp-banner.pp-banner-v6 .pp-pillar-grid-title {
+  text-align: center;
+  margin: 0 0 16px;
+}
+.pp-banner.pp-banner-v6 .pp-pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+@media (max-width: 760px) {
+  .pp-banner.pp-banner-v6 { padding: 28px 22px; }
+  .pp-banner.pp-banner-v6 .pp-pitch { margin-bottom: 24px; }
+  .pp-banner.pp-banner-v6 .pp-pillar-grid { grid-template-columns: 1fr; gap: 12px; }
+}
+
 /* 3-up pillar grid */
 .pp-pillar-grid {
   display: grid;
