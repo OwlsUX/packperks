@@ -3170,13 +3170,27 @@ body.nav-locked { overflow: hidden; }
   .perks-grid { grid-template-columns: 1fr; }
   .brand-grid { grid-template-columns: repeat(2, 1fr); }
   .page { padding: 18px 16px 64px; }
-  .ppl-hero { border-radius: var(--radius); }
+  .ppl-hero { border-radius: var(--radius-lg); overflow: hidden; }
   .ppl-hero-content { flex-direction: column; gap: 0; }
-  .ppl-hero-left { padding: 24px 20px 20px; }
-  .ppl-hero h1 { font-size: 22px; }
-  .ppl-hero-sub { font-size: 13px; }
-  .ppl-hero-img { flex: none; width: 100%; padding: 0 20px 20px; }
-  .ppl-hero-img img { max-height: 180px; }
+  .ppl-hero-left { padding: 28px 22px 24px; }
+  .ppl-hero h1 { font-size: 24px; line-height: 1.18; }
+  .ppl-hero-sub { font-size: 14px; }
+  .ppl-hero-img {
+    flex: none;
+    width: 100%;
+    padding: 0;
+    aspect-ratio: 4 / 3;
+    min-height: 0;
+  }
+  .ppl-hero-img img {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: cover;
+    object-position: center 35%;
+    border-radius: 0;
+    display: block;
+  }
   .ppl-featured-grid { grid-template-columns: 1fr; gap: 12px; }
   .ppl-feat-img { aspect-ratio: 3 / 2; }
   .ppl-feat-img { aspect-ratio: 3 / 2; }
