@@ -158,7 +158,7 @@
       lastFocus = document.activeElement;
       var heroSrc = '';
       var heroAlt = '';
-      var heroEl = card.querySelector('.perk-img > img:not(.brand-logo)');
+      var heroEl = card.querySelector('.perk-img > img:not(.brand-logo), .ppl-feat-img > img:not(.brand-logo)');
       if (heroEl) { heroSrc = heroEl.getAttribute('src'); heroAlt = heroEl.getAttribute('alt') || ''; }
 
       var brandSrc = '';
@@ -216,19 +216,33 @@
     }
 
     document.addEventListener('click', function (e) {
-      var trigger = e.target.closest('.perk-card .redeem');
-      if (trigger) {
-        var card = trigger.closest('.perk-card');
-        if (card) {
-          e.preventDefault();
-          open(card);
-          return;
-        }
-      }
       if (e.target.closest('[data-modal-close]')) {
         close();
         return;
       }
+      // Ignore clicks inside the modal itself so internal interactions work.
+      if (e.target.closest('.offer-modal__shell')) return;
+      var card = e.target.closest('.perk-card, .ppl-feat-card');
+      if (card) {
+        e.preventDefault();
+        open(card);
+      }
+    });
+
+    // Make cards keyboard-accessible
+    document.querySelectorAll('.perk-card, .ppl-feat-card').forEach(function (card) {
+      if (card.dataset.modalBound === '1') return;
+      card.dataset.modalBound = '1';
+      if (card.tagName !== 'A' && card.tagName !== 'BUTTON') {
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+      }
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          open(card);
+        }
+      });
     });
 
     if (codePill) {
