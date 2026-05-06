@@ -1679,11 +1679,11 @@ body.nav-locked { overflow: hidden; }
   line-height: 1.15;
 }
 .ppl-hero-sub {
-  font-size: 14px;
-  color: rgba(255,255,255,0.78);
+  font-size: 17px;
+  color: rgba(255,255,255,0.82);
   margin: 0 0 22px;
-  max-width: 440px;
-  line-height: 1.5;
+  max-width: 480px;
+  line-height: 1.55;
 }
 .ppl-hero-cta {
   display: inline-block;
@@ -1858,7 +1858,7 @@ body.nav-locked { overflow: hidden; }
   margin-bottom: 8px;
 }
 .ppl-feat-card h3 {
-  font-size: 19px;
+  font-size: 22px;
   font-weight: 800;
   margin: 0 0 8px;
   color: var(--halo-ink);
@@ -1866,9 +1866,9 @@ body.nav-locked { overflow: hidden; }
   line-height: 1.25;
 }
 .ppl-feat-card p {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--halo-muted);
-  line-height: 1.5;
+  line-height: 1.55;
   margin: 0;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -2260,9 +2260,7 @@ body.nav-locked { overflow: hidden; }
   border-radius: 18px;
   background: #FFFFFF;
 }
-.brand-logo-wrap--pets-table {
-  background: #CFE8E5;
-}
+/* Pets Table image has its own teal circle bg, so chip stays white. */
 .perk-card .perk-body {
   padding: 16px 16px 18px;
   display: flex;
@@ -2271,7 +2269,7 @@ body.nav-locked { overflow: hidden; }
 }
 .perk-card h4 {
   margin: 0 0 8px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 800;
   letter-spacing: -0.01em;
   color: var(--halo-ink);
@@ -2279,9 +2277,9 @@ body.nav-locked { overflow: hidden; }
 }
 .perk-card p {
   margin: 0 0 16px;
-  font-size: 14px;
+  font-size: 16px;
   color: var(--halo-muted);
-  line-height: 1.5;
+  line-height: 1.55;
   flex: 1;
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -2290,25 +2288,21 @@ body.nav-locked { overflow: hidden; }
   overflow: hidden;
 }
 .perk-card .redeem {
-  background: #F1F2F4;
+  background: var(--halo-yellow);
   color: var(--halo-ink);
-  border: 1px solid transparent;
+  border: none;
   border-radius: var(--radius-pill);
-  padding: 11px 18px;
-  font-size: 15px;
-  font-weight: 600;
+  padding: 12px 18px;
+  font-size: 16px;
+  font-weight: 700;
   cursor: pointer;
   text-decoration: none;
   text-align: center;
   display: block;
   font-family: inherit;
-  transition: background 0.15s ease, color 0.15s ease;
+  transition: background 0.15s ease;
 }
-.perk-card .redeem:hover {
-  background: var(--halo-ink);
-  color: #FFFFFF;
-  text-decoration: none;
-}
+.perk-card .redeem:hover { background: var(--halo-yellow-hover); text-decoration: none; }
 
 /* Brand placeholder colors for offer card images */
 .bg-ollie { background: #FFC629; color: #6B2D2D; }
@@ -3140,16 +3134,16 @@ body.nav-locked { overflow: hidden; }
   min-width: 0;
 }
 .cat-block-text h2 {
-  margin: 0 0 2px;
-  font-size: 22px;
+  margin: 0 0 4px;
+  font-size: 30px;
   font-weight: 800;
   color: var(--halo-ink);
-  letter-spacing: -0.01em;
+  letter-spacing: -0.015em;
 }
 .cat-block-text p {
   margin: 0;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.55;
   color: var(--halo-muted);
 }
 .cat-block-count {
