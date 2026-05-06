@@ -2253,24 +2253,15 @@ body.nav-locked { overflow: hidden; }
   box-shadow: 0 1px 3px rgba(0,0,0,0.08);
 }
 .ppl-feat-img .brand-logo-wrap {
-  height: 80px;
-  width: 80px;
+  height: 96px;
+  width: 96px;
   bottom: 14px;
   left: 14px;
-  border-radius: 16px;
+  border-radius: 18px;
+  background: #FFFFFF;
 }
 .brand-logo-wrap--pets-table {
   background: #CFE8E5;
-}
-.ppl-feat-img .brand-logo-wrap--pawp {
-  width: 150px;
-  padding: 12px 14px;
-}
-.ppl-feat-img .brand-logo-wrap--pawp .brand-logo {
-  position: static;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 }
 .perk-card .perk-body {
   padding: 16px 16px 18px;
