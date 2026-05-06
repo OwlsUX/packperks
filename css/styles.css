@@ -2769,9 +2769,27 @@ body.nav-locked { overflow: hidden; }
   padding: 6px 14px;
 }
 
-@media (max-width: 540px) {
-  .lose-item { grid-template-columns: 100px 1fr; gap: 12px; }
-  .lose-icon { width: 100px; height: 52px; padding: 8px 10px; }
+@media (max-width: 640px) {
+  .cancel-shell { padding: 24px 18px; }
+  .cancel-shell h1 { font-size: 22px; line-height: 1.2; }
+  .lose-list { padding: 18px 16px; }
+  .lose-item {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 18px 0;
+    align-items: start;
+  }
+  .lose-icon {
+    width: 120px;
+    height: 56px;
+    padding: 8px 14px;
+  }
+  .lose-icon.deals { width: 56px; height: 56px; padding: 0; }
+  .lose-item h4 { font-size: 16px; line-height: 1.3; }
+  .lose-item p { font-size: 14px; }
+  .lose-brands { gap: 6px; }
+  .lose-brand { height: 36px; padding: 4px 12px; }
+  .lose-brand img { height: 18px; max-width: 80px; }
 }
 
 .value-callout {
