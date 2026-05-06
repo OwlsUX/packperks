@@ -2282,9 +2282,9 @@ body.nav-locked { overflow: hidden; }
   overflow: hidden;
 }
 .perk-card .redeem {
-  background: #FFFFFF;
+  background: #F1F2F4;
   color: var(--halo-ink);
-  border: 1px solid var(--halo-line);
+  border: 1px solid transparent;
   border-radius: var(--radius-pill);
   padding: 11px 18px;
   font-size: 15px;
@@ -2294,11 +2294,10 @@ body.nav-locked { overflow: hidden; }
   text-align: center;
   display: block;
   font-family: inherit;
-  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 .perk-card .redeem:hover {
   background: var(--halo-ink);
-  border-color: var(--halo-ink);
   color: #FFFFFF;
   text-decoration: none;
 }
