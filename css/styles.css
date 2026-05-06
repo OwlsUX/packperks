@@ -2229,6 +2229,15 @@ body.nav-locked { overflow: hidden; }
   background: #FFFFFF;
   box-shadow: 0 1px 3px rgba(0,0,0,0.08);
 }
+.brand-logo,
+.pp-pillar-logo,
+.lose-icon img,
+.lose-brand img,
+.modal-brand > img,
+.rh-spot__logo {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
 .brand-logo-wrap .brand-logo {
   position: absolute;
   inset: 0;
