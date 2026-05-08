@@ -11,7 +11,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20260508l" />
+  <link rel="stylesheet" href="css/styles.css?v=20260508o" />
   <link rel="stylesheet" href="css/robinhood.css?v=20260508l" />
 </head>
 <body class="rh-theme">
@@ -71,8 +71,10 @@
     .rh-hero-v3 {
       position: relative;
       min-height: clamp(580px, 75vh, 820px) !important;
-      padding: 70px 0 0 !important; /* clear the fixed nav */
+      padding: 70px 0 !important; /* symmetric so content is truly vertically centered between nav and bottom */
       display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
       align-items: stretch !important;
       overflow: hidden;
       isolation: isolate;
@@ -110,9 +112,10 @@
     .rh-hero-v3__copy h1 {
       color: #FFFFFF;
       margin: 0 0 20px;
-      font-size: clamp(2.25rem, 5vw, 4rem);
+      font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+      font-weight: 400;
       line-height: 1.05;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.04em;
       text-wrap: balance;
     }
     .rh-hero-v3__copy p {
@@ -125,7 +128,7 @@
     @media (max-width: 768px) {
       .rh-hero-v3 {
         min-height: clamp(530px, 84vh, 720px);
-        padding: 70px 0 0;
+        padding: 70px 0;
       }
       .rh-hero-v3 .rh-container { padding: 24px 0; }
       .rh-hero-v3__overlay {
@@ -193,7 +196,7 @@
           <img src="https://media.hellofresh.com/f_auto,fl_lossy,q_auto/hellofresh_website/kn/cms/tpt-imagery/about/value-2.png" alt="The Pets Table">
         </div>
         <div class="rh-spot-overlay__card">
-          <img src="assets/brands/pets-table-logo-real.png" alt="The Pets Table" class="rh-spot__logo" style="height: 140px; width: 140px; padding: 18px; background: #CFE8E5; border-radius: 999px; object-fit: contain; image-rendering: -webkit-optimize-contrast;">
+          <img src="https://cdn.hellofresh.com/logo/whitelabel_logos_lg/TPT_Primary.png" alt="The Pets Table" class="rh-spot__logo" style="height: 48px;">
           <span class="rh-spot__num rh-spot__num--text">$250</span>
           <span class="rh-spot__label">Annual Food Credit</span>
           <p class="rh-spot__copy">Fresh, vet-formulated meals tailored to your dog and delivered to your door.</p>
@@ -206,7 +209,7 @@
           <img src="assets/brands/tl-go-resorts.jpeg" alt="Travel + Leisure">
         </div>
         <div class="rh-spot-overlay__card">
-          <img src="assets/brands/tl-go-logo.png" alt="Travel + Leisure Go" class="rh-spot__logo" style="height: 140px; width: 140px; border-radius: 16px; image-rendering: -webkit-optimize-contrast;">
+          <img src="https://mms.businesswire.com/media/20221028005359/en/1617802/5/TL_Go_horizontal_logo_black.jpg?download=1" alt="Travel + Leisure Go" class="rh-spot__logo" style="height: 36px;">
           <span class="rh-spot__num rh-spot__num--text">$1,000</span>
           <span class="rh-spot__label">Travel Credit</span>
           <p class="rh-spot__copy">Access to thousands of pet-friendly hotels and resorts around the world.</p>
