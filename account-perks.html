@@ -8,7 +8,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:title" content="My Account · Halo" />
   <meta property="og:description" content="Manage your Halo membership, billing, and Pack Perks." />
-  <link rel="stylesheet" href="css/styles.css?v=20260508b" />
+  <link rel="stylesheet" href="css/styles.css?v=20260508c" />
 </head>
 <body>
 
@@ -329,7 +329,7 @@
         <div class="acct-section">
           <p class="acct-label">Edit Plan</p>
           <button class="btn btn-disabled btn-block">Update My Plan</button>
-          <p class="need-break">Need a break? <a href="cancellation.html">Pause your plan or cancel your plan.</a></p>
+          <p class="need-break">Need a break? <a href="cancellation.html" data-open-cancel-modal>Pause your plan or cancel your plan.</a></p>
         </div>
       </article>
 
@@ -341,6 +341,81 @@
     © 2026 Halo Collar · <a href="#">Terms</a> · <a href="#">Privacy</a> · Pack Perks change from time to time.
   </footer>
 
+  <!-- Cancel flow modal — opens when "Pause/cancel" link is clicked -->
+  <div class="app-modal" id="cancel-modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="cancel-modal-title">
+    <div class="app-modal__backdrop" data-modal-close></div>
+    <div class="app-modal__shell cancel-shell" role="document">
+      <button type="button" class="modal-close" aria-label="Close" data-modal-close>✕</button>
+
+      <p class="step">Step 1 of 3 · Before you go</p>
+      <h1 id="cancel-modal-title">Hunter, here's what you'd lose by canceling.</h1>
+      <p class="lede">Your Gold membership unlocks Pack Perks — exclusive partner deals worth far more than your monthly cost. Take a look at what's about to disappear from your account.</p>
+
+      <div class="lose-list">
+        <h3>You'll immediately lose access to:</h3>
+
+        <div class="lose-item">
+          <div class="lose-icon vet"><img src="assets/brands/pawp-logo.jpg" alt="Pawp"></div>
+          <div>
+            <h4>Unlimited 24/7 TeleVet with Pawp</h4>
+            <p>$0 vet visits anytime, plus PetMeds Rx fulfillment in one place. Estimated savings: $480/yr.</p>
+          </div>
+        </div>
+
+        <div class="lose-item">
+          <div class="lose-icon food"><img src="assets/brands/pets-table-logo-real.png" alt="The Pets Table"></div>
+          <div>
+            <h4>$250 in annual food credits with The Pets Table</h4>
+            <p>Plus $55 off your first box. Your membership is paid in persistent food savings.</p>
+          </div>
+        </div>
+
+        <div class="lose-item">
+          <div class="lose-icon travel"><img src="assets/brands/tl-go-logo.png" alt="Travel + Leisure Go"></div>
+          <div>
+            <h4>$200 in annual travel credits with Travel + Leisure</h4>
+            <p>Plus up to 60% off dog-friendly stays.</p>
+          </div>
+        </div>
+
+        <div class="lose-item">
+          <div class="lose-icon deals">20+</div>
+          <div>
+            <h4>20+ exclusive partner deals</h4>
+            <p>Gone the day you cancel.</p>
+            <div class="lose-brands">
+              <span class="lose-brand"><img src="assets/brands/rover-logo.png" alt="Rover"></span>
+              <span class="lose-brand"><img src="assets/brands/embark-logo.png" alt="Embark"></span>
+              <span class="lose-brand"><img src="assets/brands/bark-logo.png" alt="BarkBox"></span>
+              <span class="lose-brand"><img src="assets/brands/gfpet-logo.png" alt="Outdoorsy"></span>
+              <span class="lose-brand"><img src="assets/brands/petmeds-logo.png" alt="PetMeds"></span>
+              <span class="lose-brand"><img src="assets/brands/ollie-logo.png" alt="Ollie"></span>
+              <span class="lose-brand"><img src="assets/brands/farmers-dog-logo.png" alt="The Farmer's Dog"></span>
+              <span class="lose-brand"><img src="assets/brands/redbarn-logo.png" alt="Redbarn"></span>
+              <span class="lose-brand"><img src="assets/brands/wholistic-logo.png" alt="Wholistic"></span>
+              <span class="lose-brand lose-brand--more">+ more</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="value-callout">
+        At your tier, Pack Perks alone are worth an estimated <strong>$930+ per year</strong> — about <strong>4× your annual membership</strong>.
+      </p>
+
+      <div class="cancel-actions">
+        <button type="button" class="btn btn-primary" data-modal-close>Keep my Pack Perks</button>
+        <a href="#" class="btn btn-light">Pause for 3 months instead</a>
+        <a href="#" class="btn btn-ghost">Continue canceling →</a>
+      </div>
+
+      <p class="cancel-foot">
+        Need help deciding? <a href="#">Chat with our member team</a>.
+      </p>
+    </div>
+  </div>
+
   <script src="js/nav.js?v=20260508" defer></script>
+  <script src="js/cancel-modal.js?v=20260508" defer></script>
 </body>
 </html>
