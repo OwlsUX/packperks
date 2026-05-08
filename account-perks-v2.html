@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Account · Halo</title>
+  <title>My Account · Halo · v2</title>
   <meta name="description" content="Welcome back, Hunter — manage your Halo membership, billing, and Pack Perks all in one place." />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="My Account · Halo" />
   <meta property="og:description" content="Manage your Halo membership, billing, and Pack Perks." />
-  <link rel="stylesheet" href="css/styles.css?v=20260508o" />
+  <link rel="stylesheet" href="css/styles.css?v=20260508m" />
 </head>
 <body>
 
@@ -136,9 +136,9 @@
       <p class="sub">Thanks for being a member since May 8, 2023</p>
     </div>
 
-    <!-- Pack Perks banner v5 — 3 pillar cards with brand logos below copy -->
-    <section class="pp-banner pp-banner-v5">
-      <!-- LEFT: pitch column -->
+    <!-- Pack Perks banner v6 — pitch on top, 3 pillar cards stacked below -->
+    <section class="pp-banner pp-banner-v6">
+      <!-- TOP: pitch -->
       <div class="pp-pitch">
         <span class="pp-eyebrow">Pack Perks</span>
         <h3 class="pp-headline">$1,500+ in annual value, included with your membership.</h3>
@@ -146,35 +146,33 @@
         <a href="pack-perks-list.html" class="pp-cta-btn">View Your Perks <span aria-hidden="true">&rarr;</span></a>
       </div>
 
-      <!-- RIGHT: 3 exclusive partner cards -->
+      <!-- BOTTOM: 3 exclusive partner cards -->
       <div class="pp-pillar-grid">
         <p class="pp-pillar-grid-title">Featured Benefits</p>
 
         <!-- Vet + Rx — Pawp (exclusive) -->
         <a href="pack-perks-list.html#vet" class="pp-pillar-card pp-pillar-dutch">
           <span class="pp-pillar-eyebrow">Vet + Rx</span>
-          <span class="pp-pillar-headline">Unlimited 24/7 <br>TeleVet</span>
           <img src="https://play-lh.googleusercontent.com/vP6TNDmB5ir1c904LnpjeTAMpruOFRSDIRVmUPM00Y-n_5I98O3EAfYCdxYA8utXRnbK" alt="Pawp" class="pp-pillar-logo">
-          <p class="pp-pillar-sub">Talk to a licensed vet anytime, care included.</p>
+          <span class="pp-pillar-headline">Unlimited 24/7 <br>TeleVet + Rx</span>
+          <p class="pp-pillar-sub">Unlimited TeleVet and prescriptions through Pawp for proactive, affordable care.</p>
         </a>
 
         <!-- Food — The Pets Table (exclusive) -->
         <a href="pack-perks-list.html#food" class="pp-pillar-card pp-pillar-pets">
           <span class="pp-pillar-eyebrow">Food</span>
-          <span class="pp-pillar-headline">$250 in Annual <br>Food Credits</span>
           <img src="assets/brands/pets-table-logo-real.png" alt="The Pets Table" class="pp-pillar-logo">
-          <p class="pp-pillar-sub">Fresh, vet-formulated meals delivered to your door.</p>
+          <span class="pp-pillar-headline">$250 in Annual <br>Food Credits</span>
+          <p class="pp-pillar-sub">Annual food credits through The Pets Table to support a healthy diet for your pup.</p>
         </a>
 
         <!-- Travel — T+L Go (exclusive) -->
         <a href="pack-perks-list.html#travel" class="pp-pillar-card pp-pillar-tl">
           <span class="pp-pillar-eyebrow">Travel</span>
-          <span class="pp-pillar-headline">$1,000 in Annual <br>Travel Credits</span>
           <img src="assets/brands/tl-go-logo.png" alt="Travel + Leisure" class="pp-pillar-logo">
-          <p class="pp-pillar-sub">Pet-friendly stays at top hotels worldwide.</p>
+          <span class="pp-pillar-headline">$1,000 in Annual <br>Travel Credits</span>
+          <p class="pp-pillar-sub">Travel credits with T+L Go to support exploring the world with your pup.</p>
         </a>
-
-        <a href="pack-perks-list.html" class="pp-cta-btn pp-cta-mobile">View Your Perks <span aria-hidden="true">&rarr;</span></a>
       </div>
     </section>
 
@@ -329,7 +327,7 @@
         <div class="acct-section">
           <p class="acct-label">Edit Plan</p>
           <button class="btn btn-disabled btn-block">Update My Plan</button>
-          <p class="need-break">Need a break? <a href="cancellation.html" data-open-cancel-modal>Pause your plan or cancel your plan.</a></p>
+          <p class="need-break">Need a break? <a href="cancellation.html">Pause your plan or cancel your plan.</a></p>
         </div>
       </article>
 
@@ -341,78 +339,6 @@
     © 2026 Halo Collar · <a href="#">Terms</a> · <a href="#">Privacy</a> · Pack Perks change from time to time.
   </footer>
 
-  <!-- Cancel flow modal — opens when "Pause/cancel" link is clicked -->
-  <div class="app-modal" id="cancel-modal" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="cancel-modal-title">
-    <div class="app-modal__backdrop" data-modal-close></div>
-    <div class="app-modal__shell cancel-shell" role="document">
-      <button type="button" class="modal-close" aria-label="Close" data-modal-close>✕</button>
-
-      <p class="step">Step 1 of 3 · Before you go</p>
-      <h1 id="cancel-modal-title">Hunter, here's what you'd lose by canceling.</h1>
-      <p class="lede">Your Gold membership unlocks Pack Perks — exclusive partner deals worth far more than your monthly cost. Take a look at what's about to disappear from your account.</p>
-
-      <div class="lose-list">
-        <h3>You'll immediately lose access to:</h3>
-
-        <div class="lose-item">
-          <div class="lose-icon vet"><img src="https://play-lh.googleusercontent.com/vP6TNDmB5ir1c904LnpjeTAMpruOFRSDIRVmUPM00Y-n_5I98O3EAfYCdxYA8utXRnbK" alt="Pawp"></div>
-          <div>
-            <h4>Unlimited 24/7 TeleVet with Pawp</h4>
-            <p>$0 vet visits anytime, plus PetMeds Rx fulfillment in one place. Estimated savings: $480/yr.</p>
-          </div>
-        </div>
-
-        <div class="lose-item">
-          <div class="lose-icon food"><img src="assets/brands/pets-table-logo-real.png" alt="The Pets Table"></div>
-          <div>
-            <h4>$250 in annual food credits with The Pets Table</h4>
-            <p>Plus $55 off your first box. Your membership is paid in persistent food savings.</p>
-          </div>
-        </div>
-
-        <div class="lose-item">
-          <div class="lose-icon travel"><img src="assets/brands/tl-go-logo.png" alt="Travel + Leisure Go"></div>
-          <div>
-            <h4>$200 in annual travel credits with Travel + Leisure</h4>
-            <p>Plus up to 60% off dog-friendly stays.</p>
-          </div>
-        </div>
-
-        <div class="lose-item">
-          <div class="lose-icon walking"><img src="assets/brands/rover-logo.png" alt="Rover"></div>
-          <div>
-            <h4>20+ exclusive partner deals</h4>
-            <p>Gone the day you cancel.</p>
-            <div class="lose-brands">
-              <span class="lose-brand"><img src="assets/brands/bark-logo.png" alt="BarkBox"></span>
-              <span class="lose-brand"><img src="assets/brands/joyfull-logo.png" alt="Joyfull"></span>
-              <span class="lose-brand"><img src="assets/brands/gfpet-logo.png" alt="Outdoorsy"></span>
-              <span class="lose-brand"><img src="assets/brands/wholistic-logo.png" alt="Wholistic"></span>
-              <span class="lose-brand"><img src="assets/brands/petmeds-logo.png" alt="PetMeds"></span>
-              <span class="lose-brand"><img src="assets/brands/ollie-logo.png" alt="Ollie"></span>
-              <span class="lose-brand lose-brand--more">+ more</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <p class="value-callout">
-        At your tier, Pack Perks alone are worth an estimated<br><strong>$930+ per year</strong> — about <strong>4× your annual membership</strong>.
-      </p>
-
-      <div class="cancel-actions">
-        <button type="button" class="btn btn-primary" data-modal-close>Keep my Pack Perks</button>
-        <a href="#" class="btn btn-light">Pause for 3 months instead</a>
-        <a href="#" class="btn btn-ghost">Continue canceling →</a>
-      </div>
-
-      <p class="cancel-foot">
-        Need help deciding? <a href="#">Chat with our member team</a>.
-      </p>
-    </div>
-  </div>
-
-  <script src="js/nav.js?v=20260508c" defer></script>
-  <script src="js/cancel-modal.js?v=20260508c" defer></script>
+  <script src="js/nav.js" defer></script>
 </body>
 </html>
