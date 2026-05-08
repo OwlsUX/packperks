@@ -2785,7 +2785,7 @@ body.nav-locked { overflow: hidden; }
   width: 44px;
   height: 44px;
   flex: 0 0 44px;
-  background: #FFFFFF;
+  background: transparent;
   border: none;
   border-radius: 10px;
   overflow: hidden;
