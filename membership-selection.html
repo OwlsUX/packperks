@@ -3,240 +3,494 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Choose Your Halo Membership</title>
-  <meta name="description" content="Pick your Halo membership tier — Bronze Basic, Silver Mid-Tier, or Gold Premium — each with Pack Perks included." />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Choose Your Halo Membership" />
-  <meta property="og:description" content="Bronze, Silver, or Gold — every Halo membership includes Pack Perks." />
-  <link rel="stylesheet" href="css/styles.css" />
+  <title>Select a Pack Membership Plan · Halo</title>
+  <meta name="description" content="Pick your Halo Pack membership — Bronze, Silver, or Gold. Pack Perks included on every plan." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+  <style>
+    :root {
+      --halo-yellow: #FCD62D;
+      --halo-yellow-hover: #E8C428;
+      --halo-blue: #2F93F3;
+      --halo-blue-tint: #E5F1FE;
+      --halo-ink: #0E1116;
+      --halo-muted: #5C6470;
+      --halo-line: #E9ECEF;
+      --halo-bg: #F4F6F8;
+      --green-600: #16A34A;
+      --green-50: #F0FDF4;
+      --green-200: #BBF7D0;
+      --green-800: #166534;
+      --shadow-sm: 0 1px 2px rgba(15, 17, 22, 0.04), 0 1px 3px rgba(15, 17, 22, 0.06);
+      --shadow-md: 0 6px 18px rgba(15, 17, 22, 0.08);
+      --shadow-lg: 0 12px 30px rgba(15, 17, 22, 0.12);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--halo-bg);
+      color: var(--halo-ink);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    .ms-shell { min-height: 100vh; padding-bottom: 64px; }
+
+    /* Progress bar */
+    .ms-progress { max-width: 1080px; margin: 0 auto; padding: 32px 24px 8px; }
+    .ms-progress__row {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 13px; color: var(--halo-muted); margin-bottom: 12px; font-weight: 500;
+    }
+    .ms-progress__bar { width: 100%; height: 8px; background: #E9ECEF; border-radius: 999px; overflow: hidden; }
+    .ms-progress__fill { width: 25%; height: 100%; background: var(--halo-yellow); border-radius: 999px; transition: width .4s ease; }
+
+    /* Header */
+    .ms-header { max-width: 760px; margin: 24px auto 28px; padding: 0 24px; text-align: center; }
+    .ms-header h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; letter-spacing: -0.02em; margin: 0 0 14px; line-height: 1.1; }
+    .ms-header p { font-size: 17px; color: var(--halo-muted); margin: 0; line-height: 1.55; }
+
+    /* Billing toggle */
+    .ms-toggle-wrap { max-width: 640px; margin: 0 auto 32px; padding: 0 24px; }
+    .ms-toggle {
+      display: flex; gap: 6px; padding: 6px;
+      background: #FFFFFF; border: 1px solid var(--halo-line);
+      border-radius: 16px; box-shadow: var(--shadow-sm);
+    }
+    .ms-toggle__btn {
+      flex: 1; height: 52px; border-radius: 12px;
+      font-size: 15px; font-weight: 600; color: var(--halo-muted);
+      transition: background .2s, color .2s;
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+    }
+    .ms-toggle__btn[aria-selected="true"] { background: var(--halo-yellow); color: #000; box-shadow: var(--shadow-sm); }
+    .ms-toggle__hint { font-weight: 600; font-size: 13px; color: var(--green-600); }
+    .ms-toggle__btn[aria-selected="true"] .ms-toggle__hint { color: #000; }
+
+    /* Plan cards */
+    .ms-plans {
+      max-width: 1080px; margin: 0 auto; padding: 0 24px;
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; align-items: start;
+    }
+    .ms-card {
+      background: #FFFFFF; border: 1px solid var(--halo-line);
+      border-radius: 18px; padding: 34px 22px 22px;
+      display: flex; flex-direction: column; cursor: pointer;
+      transition: box-shadow .2s, border-color .2s, transform .2s;
+      box-shadow: var(--shadow-sm); position: relative; overflow: visible;
+    }
+    .ms-card:hover { box-shadow: var(--shadow-md); }
+    .ms-card[aria-selected="true"] {
+      border-color: var(--halo-blue);
+      box-shadow: 0 0 0 2px var(--halo-blue), var(--shadow-md);
+    }
+    .ms-card--silver { transform: translateY(-6px); }
+    .ms-card__head { margin-bottom: 18px; }
+    .ms-card__badge {
+      position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%);
+      display: inline-flex; align-items: center;
+      padding: 5px 14px; border-radius: 999px;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.02em;
+      white-space: nowrap; z-index: 2;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+    .ms-card--bronze .ms-card__badge { background: #F1F3F5; color: #495057; border: 1px solid var(--halo-line); }
+    .ms-card--silver .ms-card__badge { background: var(--halo-blue); color: #FFFFFF; }
+    .ms-card--gold .ms-card__badge { background: var(--halo-yellow); color: #000; }
+    .ms-card__title { font-size: 24px; font-weight: 800; margin: 0; letter-spacing: -0.01em; line-height: 1.1; }
+    .ms-card__price { font-size: 20px; font-weight: 700; color: var(--halo-ink); margin: 6px 0 0; }
+    .ms-card__addl { font-size: 13px; color: var(--halo-muted); margin: 4px 0 0; }
+
+    .ms-features {
+      list-style: none; padding: 0; margin: 0 0 18px;
+      display: flex; flex-direction: column; gap: 12px;
+    }
+    .ms-features li {
+      position: relative; padding-left: 30px;
+      font-size: 15px; color: #1F2937; line-height: 1.45;
+    }
+    .ms-features li.is-anchor { font-weight: 700; }
+    .ms-check {
+      position: absolute; left: 0; top: 2px;
+      width: 20px; height: 20px; border-radius: 999px;
+      background: var(--halo-blue-tint); color: var(--halo-blue);
+      display: inline-flex; align-items: center; justify-content: center;
+    }
+    .ms-check svg { display: block; }
+
+    /* Pack Perks block within card */
+    .ms-perks { border-top: 1px dashed var(--halo-line); margin-top: 6px; padding-top: 16px; margin-bottom: 18px; }
+    .ms-perks__head { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 12px; }
+    .ms-perks__label {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--halo-ink);
+    }
+    .ms-perks__dot { width: 8px; height: 8px; border-radius: 999px; background: var(--halo-yellow); display: inline-block; }
+    .ms-perks__value {
+      font-size: 12px; font-weight: 700; color: var(--green-800);
+      background: var(--green-50); border: 1px solid var(--green-200);
+      padding: 4px 10px; border-radius: 999px;
+    }
+    .ms-perks__list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+    .ms-perks__list li { display: flex; gap: 8px; font-size: 14px; color: #374151; line-height: 1.4; }
+    .ms-perks__list li::before { content: "✓"; color: var(--halo-yellow-hover); font-weight: 800; flex: 0 0 14px; }
+
+    /* Card CTA */
+    .ms-card__cta {
+      width: 100%; height: 52px; border-radius: 14px;
+      background: #F1F3F5; color: #4B5563; font-weight: 700; font-size: 15px;
+      transition: background .2s, color .2s, box-shadow .2s;
+    }
+    .ms-card__cta:hover { background: #E5E7EB; }
+    .ms-card[aria-selected="true"] .ms-card__cta { background: var(--halo-yellow); color: #000; box-shadow: var(--shadow-md); }
+    .ms-card[aria-selected="true"] .ms-card__cta:hover { background: var(--halo-yellow-hover); }
+
+    /* Order summary */
+    .ms-order { max-width: 540px; margin: 36px auto 0; padding: 0 24px; }
+    .ms-order__shell {
+      background: #FFFFFF; border: 1px solid var(--halo-line);
+      border-radius: 18px; padding: 26px 26px 22px; box-shadow: var(--shadow-sm);
+    }
+    .ms-order__title { font-size: 17px; font-weight: 700; margin: 0 0 18px; }
+    .ms-order__row { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+    .ms-order__plan-name { font-weight: 600; font-size: 15px; margin: 0; }
+    .ms-order__billing { color: var(--halo-muted); font-size: 14px; margin: 2px 0 0; }
+    .ms-stepper { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+    .ms-stepper__label { font-size: 12px; color: var(--halo-muted); }
+    .ms-stepper__row { display: flex; align-items: center; gap: 10px; }
+    .ms-stepper__btn {
+      width: 32px; height: 32px; border-radius: 999px;
+      border: 1px solid #D1D5DB; background: #FFFFFF;
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 600; color: var(--halo-ink);
+      transition: border-color .15s, background .15s;
+    }
+    .ms-stepper__btn:hover:not(:disabled) { border-color: var(--halo-yellow); background: #FFFEF2; }
+    .ms-stepper__btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .ms-stepper__count { min-width: 36px; text-align: center; font-weight: 700; background: #F8F9FA; padding: 6px 10px; border-radius: 8px; }
+
+    .ms-cart { margin: 22px 0 18px; display: flex; flex-direction: column; gap: 8px; }
+    .ms-cart__line { display: flex; justify-content: space-between; align-items: center; padding: 6px 0; font-size: 14px; }
+    .ms-cart__line span:first-child { color: #374151; }
+    .ms-cart__line strong { font-weight: 700; }
+    .ms-total { border-top: 1px solid var(--halo-line); padding-top: 18px; display: flex; justify-content: space-between; align-items: flex-start; }
+    .ms-total__label { font-size: 17px; font-weight: 700; }
+    .ms-total__amount { text-align: right; }
+    .ms-total__amount strong { font-size: 22px; font-weight: 800; letter-spacing: -0.01em; display: block; }
+    .ms-total__amount span { font-size: 13px; color: var(--halo-muted); margin-top: 4px; display: block; }
+    .ms-savings {
+      margin-top: 14px; background: var(--green-50); border: 1px solid var(--green-200);
+      border-radius: 10px; padding: 10px 14px;
+      font-size: 13px; font-weight: 600; color: var(--green-800); text-align: center;
+    }
+
+    /* Continue */
+    .ms-continue { max-width: 540px; margin: 24px auto 0; padding: 0 24px; }
+    .ms-continue__btn {
+      width: 100%; height: 60px; border-radius: 16px;
+      background: var(--halo-yellow); color: #000;
+      font-size: 17px; font-weight: 700; box-shadow: var(--shadow-md);
+      transition: background .2s, box-shadow .2s;
+    }
+    .ms-continue__btn:hover { background: var(--halo-yellow-hover); box-shadow: var(--shadow-lg); }
+    .ms-continue__guarantee { text-align: center; font-size: 14px; color: var(--halo-muted); margin: 14px 0 0; }
+
+    .ms-fine { max-width: 1080px; margin: 36px auto 0; padding: 0 24px; border-top: 1px solid var(--halo-line); padding-top: 18px; }
+    .ms-fine p { font-size: 12px; color: var(--halo-muted); text-align: center; margin: 0 0 8px; line-height: 1.6; }
+
+    @media (max-width: 920px) {
+      .ms-plans { grid-template-columns: 1fr; max-width: 520px; gap: 14px; }
+      .ms-card--silver { transform: none; }
+    }
+    @media (max-width: 480px) {
+      .ms-toggle__btn { height: 56px; flex-direction: column; gap: 2px; }
+      .ms-toggle__btn .ms-toggle__hint { font-size: 11px; }
+      .ms-header h1 { font-size: 26px; }
+      .ms-header p { font-size: 15px; }
+    }
+  </style>
 </head>
 <body>
 
-  <nav class="halo-navigation" role="navigation">
-    <div class="nav-container">
-      <a href="index.html" class="nav-logo">
-        <img src="https://d252xzqwj6utz.cloudfront.net/static/owls-home/Halo-Logo.svg" alt="Halo" width="120" height="auto">
-      </a>
-      <div class="nav-menu-desktop">
-        <div class="nav-dropdown exp-target">
-          <button class="nav-dropdown-toggle" type="button">
-            Shop Halo
-            <svg class="dropdown-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none">
-              <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          </button>
-          <div class="nav-dropdown-menu">
-            <a href="#" class="dropdown-link">Halo Collars</a>
-            <a href="#" class="dropdown-link">Accessories</a>
-            <a href="#" class="dropdown-link">Beacons</a>
-          </div>
-          <div class="mega-menu">
-            <div class="mega-menu__container">
-              <div class="mega-menu__products-area">
-                <div class="mega-menu__grid">
-                  <a href="#" class="product-card product-card__animated hc5-product">
-                    <div class="product-card__bg">
-                      <img src="https://d252xzqwj6utz.cloudfront.net/static/h5/white-2-s.webp" alt="Halo Collar 5" class="product-card__image">
-                    </div>
-                    <div class="product-card__content product-card__content--light">
-                      <div class="product-card__badge">NEW</div>
-                      <h3 class="product-card__title">Halo Collar 5</h3>
-                      <div class="product-card__price">
-                        <p class="price-label">Save $75</p>
-                        <p>$524 <span class="strikethrough">$599</span></p>
-                      </div>
-                    </div>
-                  </a>
-                  <a href="#" class="product-card product-card__animated hc4-product">
-                    <div class="product-card__bg">
-                      <img src="https://d252xzqwj6utz.cloudfront.net/static/h5/white-1-s.webp" alt="Halo Collar 4" class="product-card__image">
-                    </div>
-                    <div class="product-card__content product-card__content--light">
-                      <div class="product-card__badge">WHILE SUPPLIES LAST</div>
-                      <h3 class="product-card__title">Halo Collar 4</h3>
-                      <div class="product-card__price">
-                        <p class="price-label">Save $125</p>
-                        <p>$424 <span class="strikethrough">$549</span></p>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="mega-menu__sidebar">
-                <nav>
-                  <a href="#" class="nav-item">
-                    <div class="nav-item__left">
-                      <img src="https://www.halocollar.com/wp-content/uploads/2024/01/product_remote_beacon_pdp.webp" alt="Shop Beacons" class="nav-item__image nav-item__image--scaled">
-                      <span>Shop Beacons</span>
-                    </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-item__arrow"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                  </a>
-                  <a href="#" class="nav-item">
-                    <div class="nav-item__left">
-                      <img src="https://www.halocollar.com/wp-content/uploads/2025/05/halo-shop-charging-stand-2505.webp" alt="Shop Accessories" class="nav-item__image">
-                      <span>Shop Accessories</span>
-                    </div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="nav-item__arrow"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-                  </a>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a href="#" class="nav-link">Testimonials</a>
-        <a href="#" class="nav-link">Deals</a>
-        <a href="#" class="nav-link">How it works</a>
-        <a href="marketing.html" class="nav-link nav-link-pp">Pack Perks</a>
+  <div class="ms-shell">
+
+    <div class="ms-progress">
+      <div class="ms-progress__row">
+        <span>Step 1 of 4</span>
+        <span>25%</span>
       </div>
-      <div class="nav-right-desktop">
-        <div class="nav-dropdown account-dropdown">
-          <button class="nav-icon-btn" aria-label="Account" type="button">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-              <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-              <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          </button>
-          <div class="nav-dropdown-menu account-menu">
-            <a href="account-perks.html" class="dropdown-link">My Account</a>
-            <a href="#" class="dropdown-link">Login</a>
-            <a href="#" class="dropdown-link">Sign Up</a>
-            <a href="#" class="dropdown-link">My Orders</a>
-          </div>
-        </div>
-        <a href="#" class="main-nav-cart nav-icon-btn" aria-label="Cart">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </a>
-        <a href="marketing.html" class="nav-cta-btn">Explore Halo</a>
-      </div>
-      <div class="nav-right-mobile">
-        <a href="#" class="main-nav-cart nav-icon-btn" aria-label="Cart">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-            <path d="M9 22C9.55228 22 10 21.5523 10 21C10 20.4477 9.55228 20 9 20C8.44772 20 8 20.4477 8 21C8 21.5523 8.44772 22 9 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M20 22C20.5523 22 21 21.5523 21 21C21 20.4477 20.5523 20 20 20C19.4477 20 19 20.4477 19 21C19 21.5523 19.4477 22 20 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path d="M1 1H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-          </svg>
-        </a>
-        <button class="nav-mobile-toggle" aria-label="Menu" type="button">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
+      <div class="ms-progress__bar"><div class="ms-progress__fill"></div></div>
+    </div>
+
+    <div class="ms-header">
+      <h1>Select a Pack Membership&nbsp;Plan</h1>
+      <p>All plans provide unlimited cellular data on all major carriers to enable real-time tracking of your dog's location anywhere in the world.</p>
+    </div>
+
+    <div class="ms-toggle-wrap">
+      <div class="ms-toggle" role="tablist" aria-label="Billing frequency">
+        <button class="ms-toggle__btn" role="tab" aria-selected="true" data-billing="monthly">Monthly</button>
+        <button class="ms-toggle__btn" role="tab" aria-selected="false" data-billing="annual">
+          <span>Annual</span>
+          <span class="ms-toggle__hint">• 1 Free Month</span>
+        </button>
+        <button class="ms-toggle__btn" role="tab" aria-selected="false" data-billing="two-year">
+          <span>2-Year</span>
+          <span class="ms-toggle__hint">• 3 Free Months</span>
         </button>
       </div>
     </div>
-  </nav>
 
-  <main class="page">
+    <div class="ms-plans">
 
-    <p class="crumbs">Step 2 of 3 · Choose your membership</p>
-    <div class="welcome-head">
-      <h1>Pick the membership that fits your pack.</h1>
-      <p class="sub">Every plan includes the Halo GPS fence, activity tracking, and a year of Pack Perks — exclusive partner discounts that can more than cover the cost of your membership.</p>
-    </div>
+      <article class="ms-card ms-card--bronze" data-plan="bronze" aria-selected="false">
+        <span class="ms-card__badge">Basic Protection</span>
+        <div class="ms-card__head">
+          <h2 class="ms-card__title">Bronze</h2>
+          <p class="ms-card__price"><span data-price="bronze">$9.99</span>/mo</p>
+          <p class="ms-card__addl">Additional collars: $3.99/mo</p>
+        </div>
 
-    <div class="plan-shell">
-      <section class="plan-grid">
+        <ul class="ms-features">
+          <li class="is-anchor"><span class="ms-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>5 virtual fences</li>
+          <li><span class="ms-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Unlimited cellular data and global coverage</li>
+          <li><span class="ms-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Live video support</li>
+          <li><span class="ms-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>$150 off collar upgrades and replacements<sup>*</sup></li>
+        </ul>
 
-        <!-- Bronze -->
-        <article class="plan-card tier-bronze">
-          <div class="plan-tier-row">
-            <span class="tier-badge">Bronze</span>
-            <span class="level-name">Basic</span>
+        <div class="ms-perks">
+          <div class="ms-perks__head">
+            <span class="ms-perks__label"><span class="ms-perks__dot"></span>Pack Perks Included</span>
+            <span class="ms-perks__value">$150+/yr value</span>
           </div>
-          <div class="plan-price"><span class="amt">$9.16</span><span class="per">/mo</span></div>
-          <p class="extra">Additional collars: $3.66/mo</p>
-
-          <ul class="plan-feat">
-            <li>GPS fence + activity tracking</li>
-            <li>Self-guided training</li>
-            <li>Email support</li>
+          <ul class="ms-perks__list">
+            <li>10% off Spot Pet Insurance</li>
+            <li>$30 Embark DNA test credit</li>
+            <li>50% off Joyfull functional treats</li>
           </ul>
+        </div>
 
-          <div class="plan-pp-strip">
-            <div class="head"><span class="dot"></span> Pack Perks Included</div>
-            <ul>
-              <li>$45 off first box + $150 in food credits / yr</li>
-              <li>3 months of 24/7 TeleVet</li>
-              <li>$50 in annual travel credits</li>
-            </ul>
+        <button class="ms-card__cta" type="button">Select Bronze</button>
+      </article>
+
+      <article class="ms-card ms-card--silver" data-plan="silver" aria-selected="true">
+        <span class="ms-card__badge">Most Popular</span>
+        <div class="ms-card__head">
+          <h2 class="ms-card__title">Silver</h2>
+          <p class="ms-card__price"><span data-price="silver">$14.99</span>/mo</p>
+          <p class="ms-card__addl">Additional collars: $4.99/mo</p>
+        </div>
+
+        <ul class="ms-features">
+          <li class="is-anchor"><span class="ms-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>20 virtual fences</li>
+          <li><span class="ms-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Unlimited cellular data and global coverage</li>
+          <li><span class="ms-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Live video support &amp; 1-on-1 setup session</li>
+          <li><span class="ms-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>$175 off upgrades and replacements<sup>*</sup></li>
+          <li><span class="ms-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>25% off all accessories</li>
+          <li><span class="ms-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Activity reports</li>
+        </ul>
+
+        <div class="ms-perks">
+          <div class="ms-perks__head">
+            <span class="ms-perks__label"><span class="ms-perks__dot"></span>Pack Perks Included</span>
+            <span class="ms-perks__value">$500+/yr value</span>
           </div>
-
-          <a href="#" class="btn btn-light cta">Choose Bronze</a>
-        </article>
-
-        <!-- Silver (featured) -->
-        <article class="plan-card tier-silver is-featured">
-          <span class="ribbon">Most Popular</span>
-          <div class="plan-tier-row">
-            <span class="tier-badge">Silver</span>
-            <span class="level-name">Mid-Tier</span>
-          </div>
-          <div class="plan-price"><span class="amt">$13.74</span><span class="per">/mo</span></div>
-          <p class="extra">Additional collars: $4.57/mo</p>
-
-          <ul class="plan-feat">
+          <ul class="ms-perks__list">
             <li>Everything in Bronze</li>
-            <li>Live trainer sessions</li>
-            <li>Health insights dashboard</li>
-            <li>Priority chat support</li>
+            <li>25% BarkBox + 20% West Paw + Pawstruck credits</li>
+            <li>$20 Rover, $25 Wag!, Outdoorsy &amp; Kurgo travel</li>
           </ul>
+        </div>
 
-          <div class="plan-pp-strip">
-            <div class="head"><span class="dot"></span> Pack Perks Included</div>
-            <ul>
-              <li>$50 off first box + $200 in food credits / yr</li>
-              <li>6 months of 24/7 TeleVet</li>
-              <li>$100 in annual travel credits</li>
-            </ul>
+        <button class="ms-card__cta" type="button">✓ Selected</button>
+      </article>
+
+      <article class="ms-card ms-card--gold" data-plan="gold" aria-selected="false">
+        <span class="ms-card__badge">Best Value</span>
+        <div class="ms-card__head">
+          <h2 class="ms-card__title">Gold</h2>
+          <p class="ms-card__price"><span data-price="gold">$19.99</span>/mo</p>
+          <p class="ms-card__addl">Additional collars: $4.99/mo</p>
+        </div>
+
+        <ul class="ms-features">
+          <li class="is-anchor"><span class="ms-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Unlimited virtual fences</li>
+          <li><span class="ms-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Unlimited cellular data and global coverage</li>
+          <li><span class="ms-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Concierge support &amp; 1-on-1 setup session</li>
+          <li><span class="ms-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>$200 off upgrades and replacements<sup>*</sup></li>
+          <li><span class="ms-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>50% off all accessories</li>
+          <li><span class="ms-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Advanced activity reports</li>
+          <li><span class="ms-check"><svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.5L4.8 9L10 3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Live sessions with expert trainers</li>
+        </ul>
+
+        <div class="ms-perks">
+          <div class="ms-perks__head">
+            <span class="ms-perks__label"><span class="ms-perks__dot"></span>Pack Perks Included</span>
+            <span class="ms-perks__value">$1,500+/yr value</span>
           </div>
-
-          <a href="#" class="btn btn-primary cta">Choose Silver</a>
-        </article>
-
-        <!-- Gold -->
-        <article class="plan-card tier-gold">
-          <div class="plan-tier-row">
-            <span class="tier-badge">Gold</span>
-            <span class="level-name">Premium</span>
-          </div>
-          <div class="plan-price"><span class="amt">$18.32</span><span class="per">/mo</span></div>
-          <p class="extra">Additional collars: $4.57/mo</p>
-
-          <ul class="plan-feat">
+          <ul class="ms-perks__list">
             <li>Everything in Silver</li>
-            <li>Multi-pet management</li>
-            <li>Concierge support</li>
-            <li>Early access to new features</li>
+            <li>Unlimited 24/7 TeleVet via Pawp ($480/yr)</li>
+            <li>$250 in Pets Table food credits</li>
+            <li>$1,000 Travel + Leisure GO travel credit</li>
           </ul>
+        </div>
 
-          <div class="plan-pp-strip">
-            <div class="head"><span class="dot"></span> Pack Perks Included</div>
-            <ul>
-              <li>$55 off first box + $250 in food credits / yr</li>
-              <li>Unlimited 24/7 TeleVet</li>
-              <li>$200 in annual travel credits</li>
-            </ul>
-          </div>
+        <button class="ms-card__cta" type="button">Select Gold</button>
+      </article>
 
-          <a href="#" class="btn btn-dark cta">Choose Gold</a>
-        </article>
-
-      </section>
-
-      <p style="text-align:center;color:var(--halo-muted);font-size:13px;margin:32px 0 0;">
-        Curious what each tier unlocks? <a href="marketing.html">See all Pack Perks</a> · Already a member? <a href="account-perks.html">Sign in</a>
-      </p>
     </div>
 
-  </main>
+    <div class="ms-order">
+      <div class="ms-order__shell">
+        <h3 class="ms-order__title">Your Order</h3>
 
-  <footer class="foot">
-    All plans renew monthly. Cancel anytime — but you might want to see what you'd lose first.
-  </footer>
+        <div class="ms-order__row">
+          <div>
+            <p class="ms-order__plan-name" id="ms-order-plan">Silver Plan</p>
+            <p class="ms-order__billing" id="ms-order-billing">Monthly Billing</p>
+          </div>
+          <div class="ms-stepper">
+            <span class="ms-stepper__label">Number of Collars</span>
+            <div class="ms-stepper__row">
+              <button class="ms-stepper__btn" type="button" id="ms-collar-minus" aria-label="Decrease collar count" disabled>−</button>
+              <div class="ms-stepper__count" id="ms-collar-count">1</div>
+              <button class="ms-stepper__btn" type="button" id="ms-collar-plus" aria-label="Increase collar count">+</button>
+            </div>
+          </div>
+        </div>
 
-  <script src="js/nav.js" defer></script>
+        <div class="ms-cart" id="ms-cart"></div>
+
+        <div class="ms-total">
+          <span class="ms-total__label">Total</span>
+          <div class="ms-total__amount">
+            <strong id="ms-total-amount">$14.99/mo</strong>
+            <span id="ms-total-billed">$14.99 billed monthly</span>
+          </div>
+        </div>
+
+        <div class="ms-savings" id="ms-savings" hidden></div>
+      </div>
+    </div>
+
+    <div class="ms-continue">
+      <button class="ms-continue__btn" type="button" onclick="window.location.href='account-perks.html'">Continue →</button>
+      <p class="ms-continue__guarantee">100% Satisfaction Guarantee<sup>*</sup></p>
+    </div>
+
+    <div class="ms-fine">
+      <p>* If you are not completely satisfied with your purchase for any reason during your first 90 days after you receive your Halo Collar, you may return it for a refund (less $25 shipping &amp; handling) per our Terms and Conditions.</p>
+      <p>* Dollar off calculated based upon the full retail price of the latest Halo Collar model.</p>
+    </div>
+
+  </div>
+
+  <script>
+    (function () {
+      const planPrices = {
+        bronze: { monthly: 9.99,  annual: 101.89, twoYear: 191.81, addlMonthly: 3.99 },
+        silver: { monthly: 14.99, annual: 152.84, twoYear: 287.81, addlMonthly: 4.99 },
+        gold:   { monthly: 19.99, annual: 203.90, twoYear: 383.81, addlMonthly: 4.99 }
+      };
+
+      const state = { plan: 'silver', billing: 'monthly', collars: 1 };
+      const fmt = n => '$' + n.toFixed(2);
+      const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
+
+      function monthlyEquivalent(plan) {
+        const p = planPrices[plan];
+        if (state.billing === 'monthly') return p.monthly;
+        if (state.billing === 'annual') return p.annual / 12;
+        return p.twoYear / 24;
+      }
+      function additionalCollarMonthly(plan) {
+        const p = planPrices[plan];
+        if (state.billing === 'monthly') return p.addlMonthly;
+        if (state.billing === 'annual') return p.addlMonthly * 11 / 12;
+        return p.addlMonthly * 21 / 24;
+      }
+      function billingLabel() {
+        return state.billing === 'monthly' ? 'Monthly Billing'
+             : state.billing === 'annual' ? 'Annual Billing'
+             : '2-Year Billing';
+      }
+      function billedSuffix() {
+        return state.billing === 'monthly' ? 'monthly'
+             : state.billing === 'annual' ? 'annually'
+             : 'every 2 years';
+      }
+      function billingMultiplier() {
+        return state.billing === 'monthly' ? 1
+             : state.billing === 'annual' ? 12
+             : 24;
+      }
+
+      function render() {
+        document.querySelectorAll('[data-price]').forEach(el => {
+          el.textContent = fmt(monthlyEquivalent(el.getAttribute('data-price')));
+        });
+        document.querySelectorAll('.ms-card').forEach(card => {
+          const plan = card.dataset.plan;
+          const selected = plan === state.plan;
+          card.setAttribute('aria-selected', selected ? 'true' : 'false');
+          card.querySelector('.ms-card__cta').textContent = selected ? '✓ Selected' : 'Select ' + cap(plan);
+        });
+        document.querySelectorAll('.ms-toggle__btn').forEach(btn => {
+          btn.setAttribute('aria-selected', btn.dataset.billing === state.billing ? 'true' : 'false');
+        });
+        document.getElementById('ms-order-plan').textContent = cap(state.plan) + ' Plan';
+        document.getElementById('ms-order-billing').textContent = billingLabel();
+        document.getElementById('ms-collar-count').textContent = state.collars;
+        document.getElementById('ms-collar-minus').disabled = state.collars <= 1;
+
+        const cart = document.getElementById('ms-cart');
+        const monthly = monthlyEquivalent(state.plan);
+        const lines = [`<div class="ms-cart__line"><span>Collar 1 × ${cap(state.plan)} Plan</span><strong>${fmt(monthly)}/mo</strong></div>`];
+        for (let i = 1; i < state.collars; i++) {
+          lines.push(`<div class="ms-cart__line"><span>Collar ${i + 1} × ${cap(state.plan)} Plan</span><strong>${fmt(additionalCollarMonthly(state.plan))}/mo</strong></div>`);
+        }
+        cart.innerHTML = lines.join('');
+
+        const totalMonthly = monthly + (state.collars - 1) * additionalCollarMonthly(state.plan);
+        const billedTotal = totalMonthly * billingMultiplier();
+        document.getElementById('ms-total-amount').textContent = fmt(totalMonthly) + '/mo';
+        document.getElementById('ms-total-billed').textContent = fmt(billedTotal) + ' billed ' + billedSuffix();
+
+        const savings = document.getElementById('ms-savings');
+        if (state.billing === 'annual') {
+          const saved = planPrices[state.plan].monthly * 12 - planPrices[state.plan].annual;
+          savings.hidden = false;
+          savings.textContent = '💰 1 month free with annual billing — ' + fmt(saved) + ' saved!';
+        } else if (state.billing === 'two-year') {
+          const saved = planPrices[state.plan].monthly * 24 - planPrices[state.plan].twoYear;
+          savings.hidden = false;
+          savings.textContent = '💰 3 months free with 2-year billing — ' + fmt(saved) + ' saved!';
+        } else {
+          savings.hidden = true;
+        }
+      }
+
+      document.querySelectorAll('.ms-card').forEach(card => {
+        card.addEventListener('click', () => { state.plan = card.dataset.plan; render(); });
+      });
+      document.querySelectorAll('.ms-toggle__btn').forEach(btn => {
+        btn.addEventListener('click', () => { state.billing = btn.dataset.billing; render(); });
+      });
+      document.getElementById('ms-collar-minus').addEventListener('click', () => {
+        if (state.collars > 1) { state.collars--; render(); }
+      });
+      document.getElementById('ms-collar-plus').addEventListener('click', () => {
+        state.collars++; render();
+      });
+
+      render();
+    })();
+  </script>
 </body>
 </html>
