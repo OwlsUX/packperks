@@ -1051,13 +1051,23 @@ body.nav-locked { overflow: hidden; }
   width: 80px;
   height: 80px;
   border-radius: 16px;
-  object-fit: contain;
+  object-fit: cover;
   background: #FFFFFF;
-  padding: 10px;
   display: block;
+  overflow: hidden;
   box-shadow: 0 3px 12px rgba(0,0,0,0.2);
   margin: 10px 0;
   align-self: center;
+}
+/* Pawp wordmark is wide-aspect; keep contain so the full mark stays visible */
+.pp-pillar-dutch .pp-pillar-logo {
+  object-fit: contain;
+  padding: 8px;
+}
+/* Pets Table mark is a circle on transparent — match chip bg to its teal so
+   the circle visually fills the chip without a white edge */
+.pp-pillar-pets .pp-pillar-logo {
+  background: #CFE8E5;
 }
 
 /* Value pill on pillar cards */
@@ -1131,11 +1141,11 @@ body.nav-locked { overflow: hidden; }
     width: 56px;
     height: 56px;
     border-radius: 12px;
-    padding: 6px;
     margin: 0;
     grid-row: 1 / 3;
     grid-column: 2;
   }
+  .pp-pillar-dutch .pp-pillar-logo { padding: 4px; }
   .pp-pillar-headline {
     font-size: 15px;
     font-weight: 700;
