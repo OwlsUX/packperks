@@ -2279,7 +2279,10 @@ body.nav-locked { overflow: hidden; }
   border-radius: 18px;
   background: #FFFFFF;
 }
-/* Pets Table image has its own teal circle bg, so chip stays white. */
+/* Pets Table chip — brand teal background behind the dark wordmark */
+.brand-logo-wrap--pets-table {
+  background: #CFE8E5;
+}
 .perk-card .perk-body {
   padding: 16px 16px 18px;
   display: flex;
@@ -2745,6 +2748,7 @@ body.nav-locked { overflow: hidden; }
   letter-spacing: 0.02em;
   font-size: 18px;
 }
+.lose-icon.food { background: #CFE8E5; }
 .lose-item h4 { margin: 0 0 4px; font-size: 15px; font-weight: 700; color: var(--halo-ink); }
 .lose-item p { margin: 0; font-size: 13px; color: var(--halo-muted); line-height: 1.5; }
 
