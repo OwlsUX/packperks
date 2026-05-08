@@ -70,7 +70,7 @@
   <style>
     .rh-hero-v3 {
       position: relative;
-      min-height: 88vh;
+      min-height: clamp(360px, 50vh, 560px);
       padding: 0;
       display: flex;
       align-items: center;
@@ -97,8 +97,7 @@
     }
     .rh-hero-v3 .rh-container {
       width: 100%;
-      padding-top: 96px;
-      padding-bottom: 64px;
+      padding: 24px 0;
     }
     .rh-hero-v3__copy {
       max-width: 560px;
@@ -120,8 +119,8 @@
     }
     .rh-hero-v3__copy .rh-btn { margin: 0; }
     @media (max-width: 768px) {
-      .rh-hero-v3 { min-height: 78vh; }
-      .rh-hero-v3 .rh-container { padding-top: 88px; padding-bottom: 48px; }
+      .rh-hero-v3 { min-height: clamp(320px, 50vh, 480px); }
+      .rh-hero-v3 .rh-container { padding: 24px 0; }
       .rh-hero-v3__overlay {
         background: linear-gradient(to bottom, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.65) 100%);
       }
