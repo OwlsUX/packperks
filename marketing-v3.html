@@ -73,7 +73,7 @@
       min-height: clamp(580px, 75vh, 820px);
       padding: 70px 0 0; /* clear the fixed nav */
       display: flex;
-      align-items: center;
+      align-items: stretch;
       overflow: hidden;
       isolation: isolate;
     }
@@ -98,6 +98,9 @@
     .rh-hero-v3 .rh-container {
       width: 100%;
       padding: 24px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
     .rh-hero-v3__copy {
       max-width: 560px;
