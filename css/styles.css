@@ -1064,10 +1064,12 @@ body.nav-locked { overflow: hidden; }
   object-fit: contain;
   padding: 8px;
 }
-/* Pets Table mark is a circle on transparent — match chip bg to its teal so
-   the circle visually fills the chip without a white edge */
+/* Pets Table wordmark on brand teal tile — contain so the cursive sits
+   inside the chip with breathing room rather than being cropped by cover */
 .pp-pillar-pets .pp-pillar-logo {
   background: #CFE8E5;
+  object-fit: contain;
+  padding: 14px;
 }
 
 /* Value pill on pillar cards */
