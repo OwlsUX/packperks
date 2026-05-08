@@ -2283,8 +2283,10 @@ body.nav-locked { overflow: hidden; }
 }
 /* Pets Table chip — brand teal background, wordmark contained with padding
    so the cursive reads at glance instead of getting cropped */
-.brand-logo-wrap--pets-table { background: #CFE8E5; }
-.brand-logo-wrap--pets-table .brand-logo {
+.brand-logo-wrap--pets-table,
+.ppl-feat-img .brand-logo-wrap--pets-table { background: #CFE8E5; }
+.brand-logo-wrap--pets-table .brand-logo,
+.ppl-feat-img .brand-logo-wrap--pets-table .brand-logo {
   object-fit: contain !important;
   padding: 16px;
   box-sizing: border-box;
