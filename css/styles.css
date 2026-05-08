@@ -2773,7 +2773,7 @@ body.nav-locked { overflow: hidden; }
 
 .lose-brands {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 8px;
   margin-top: 12px;
@@ -2784,10 +2784,10 @@ body.nav-locked { overflow: hidden; }
   justify-content: center;
   width: 44px;
   height: 44px;
+  flex: 0 0 44px;
   background: #FFFFFF;
-  border: 1px solid var(--halo-line);
+  border: none;
   border-radius: 10px;
-  box-shadow: var(--shadow-sm);
   overflow: hidden;
 }
 .lose-brand img {
@@ -2801,6 +2801,7 @@ body.nav-locked { overflow: hidden; }
 .lose-brand--more {
   width: auto;
   height: auto;
+  flex: 0 0 auto;
   background: transparent;
   border: none;
   box-shadow: none;
@@ -2809,6 +2810,7 @@ body.nav-locked { overflow: hidden; }
   font-weight: 600;
   color: var(--halo-muted);
   letter-spacing: 0.02em;
+  white-space: nowrap;
 }
 
 @media (max-width: 640px) {
