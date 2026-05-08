@@ -2274,16 +2274,20 @@ body.nav-locked { overflow: hidden; }
   box-shadow: 0 1px 3px rgba(0,0,0,0.08);
 }
 .ppl-feat-img .brand-logo-wrap {
-  height: 96px;
-  width: 96px;
-  bottom: 14px;
-  left: 14px;
-  border-radius: 18px;
+  height: 112px;
+  width: 112px;
+  bottom: 16px;
+  left: 16px;
+  border-radius: 20px;
   background: #FFFFFF;
 }
-/* Pets Table chip — brand teal background behind the dark wordmark */
-.brand-logo-wrap--pets-table {
-  background: #CFE8E5;
+/* Pets Table chip — brand teal background, wordmark contained with padding
+   so the cursive reads at glance instead of getting cropped */
+.brand-logo-wrap--pets-table { background: #CFE8E5; }
+.brand-logo-wrap--pets-table .brand-logo {
+  object-fit: contain !important;
+  padding: 16px;
+  box-sizing: border-box;
 }
 .perk-card .perk-body {
   padding: 16px 16px 18px;
@@ -2355,12 +2359,16 @@ body.nav-locked { overflow: hidden; }
   inset: 0;
   z-index: 200;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   overflow-y: auto;
   padding: 32px 16px;
   opacity: 0;
   transition: opacity 0.18s ease;
+}
+@media (max-width: 720px) {
+  .offer-modal,
+  .app-modal { align-items: flex-start; padding-top: 24px; }
 }
 .offer-modal[hidden],
 .app-modal[hidden] { display: none !important; }
@@ -2370,7 +2378,9 @@ body.nav-locked { overflow: hidden; }
 .app-modal__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(17, 17, 17, 0.5);
+  background: rgba(17, 17, 17, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 .offer-modal__shell,
 .app-modal__shell {
