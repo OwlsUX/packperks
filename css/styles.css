@@ -2360,6 +2360,8 @@ body.nav-locked { overflow: hidden; }
   opacity: 0;
   transition: opacity 0.18s ease;
 }
+.offer-modal[hidden],
+.app-modal[hidden] { display: none !important; }
 .offer-modal.is-open,
 .app-modal.is-open { opacity: 1; }
 .offer-modal__backdrop,
